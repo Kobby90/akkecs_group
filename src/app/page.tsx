@@ -1,103 +1,125 @@
 import Image from "next/image";
+import Link from "next/link";
+import ImageSlider from "@/components/ImageSlider";
+
+const heroImages = [
+  {
+    src: "/money-2696228.jpg",
+    alt: "Financial Management Dashboard"
+  },
+  {
+    src: "/money-2696229.jpg",
+    alt: "Investment Analytics"
+  }
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative h-[700px]">
+        <div className="absolute inset-0">
+          <ImageSlider images={heroImages} />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-transparent"></div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        <div className="relative z-10 flex items-center h-full">
+          <div className="max-w-screen-xl mx-auto px-4 py-8 lg:py-16">
+            <div className="max-w-3xl">
+              <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
+                Enterprise Software Solutions for Asset Management
+              </h1>
+              <p className="mb-8 font-light text-gray-100 lg:mb-8 md:text-lg lg:text-xl max-w-2xl">
+                Streamline your asset management and pension fund operations with our comprehensive software solutions. Built for modern financial institutions.
+              </p>
+              <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                <Link href="/contact" 
+                  className="inline-flex items-center justify-center px-6 py-4 text-base font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition-colors">
+                  Book a Demo
+                  <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+                  </svg>
+                </Link>
+                <Link href="/solutions" 
+                  className="inline-flex items-center justify-center px-6 py-4 text-base font-medium text-center text-gray-900 bg-white border-2 border-gray-300 rounded-lg hover:bg-gray-50 focus:ring-4 focus:ring-gray-100 transition-colors">
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <div className="max-w-3xl mb-12">
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+              Designed for modern financial institutions
+            </h2>
+            <p className="text-lg text-gray-600">
+              Our solutions help asset managers and pension funds streamline operations, ensure compliance, and deliver better service to their clients.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Security Feature */}
+            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex justify-center items-center mb-4 w-12 h-12 rounded-lg bg-blue-50 text-blue-600">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clipRule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Enterprise Security</h3>
+              <p className="text-gray-600">
+                Bank-grade security with end-to-end encryption, role-based access control, and comprehensive audit trails.
+              </p>
+            </div>
+            {/* Scalability Feature */}
+            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex justify-center items-center mb-4 w-12 h-12 rounded-lg bg-blue-50 text-blue-600">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+                </svg>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Scalable Architecture</h3>
+              <p className="text-gray-600">
+                Built to grow with your business, handling millions of transactions with consistent performance.
+              </p>
+            </div>
+            {/* Compliance Feature */}
+            <div className="p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex justify-center items-center mb-4 w-12 h-12 rounded-lg bg-blue-50 text-blue-600">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"></path>
+                </svg>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-gray-900">Regulatory Compliance</h3>
+              <p className="text-gray-600">
+                Stay compliant with automated reporting, risk management, and regulatory requirements tracking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+        <div className="max-w-screen-xl mx-auto px-4 text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+              Start your digital transformation today
+            </h2>
+            <p className="mb-8 text-lg text-blue-100">
+              Book a demo to see how our solutions can transform your business operations.
+            </p>
+            <Link href="/contact" 
+              className="inline-flex items-center justify-center px-6 py-4 text-base font-medium text-blue-600 bg-white rounded-lg hover:bg-blue-50 focus:ring-4 focus:ring-blue-300 transition-colors">
+              Get started
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
