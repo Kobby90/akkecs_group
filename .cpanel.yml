@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/akkefkao/public_html
-    - /bin/cp -R * $DEPLOYPATH/ 
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R out/* $DEPLOYPATH/
+    - /bin/cp .htaccess $DEPLOYPATH/.htaccess 
