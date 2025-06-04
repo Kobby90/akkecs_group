@@ -2,9 +2,15 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/akkefkao/public_html
-    - /bin/cp -R .next $DEPLOYPATH/
+    - export HOME=/home/akkefkao
+    # Navigate to the repository directory
+    - source /home/akkefkao/.nvm/nvm.sh
+    - cd $HOME/repositories/akkecs_group
+    # Install dependencies
+    - npm install --production
+    # Build the application
+    - npm run build
+    # Copy the built files
+    - /bin/cp -R out/* $DEPLOYPATH/
     - /bin/cp -R public/* $DEPLOYPATH/
-    - /bin/cp -R .htaccess $DEPLOYPATH/
-    - /bin/cp package.json $DEPLOYPATH/
-    - /bin/cp package-lock.json $DEPLOYPATH/
-    - /bin/cp next.config.js $DEPLOYPATH/ 
+    - /bin/cp .htaccess $DEPLOYPATH/ 
