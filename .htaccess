@@ -1,5 +1,6 @@
-# Disable directory listing
-Options -Indexes
+# Disable directory listing and set security options
+Options -Indexes -MultiViews
+Options +FollowSymLinks
 
 # Set default index files
 DirectoryIndex index.html index.htm
@@ -8,14 +9,14 @@ DirectoryIndex index.html index.htm
 RewriteEngine On
 RewriteBase /
 
-# Serve files from the public directory
-RewriteCond %{REQUEST_URI} ^/public/
-RewriteRule ^public/(.*)$ $1 [L]
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Handle Next.js client-side routing
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /$1.html [L]
+RewriteRule ^([^.]+)$ $1.html [L]
 
 # Error handling
 ErrorDocument 404 /404.html
@@ -39,6 +40,7 @@ ErrorDocument 404 /404.html
     Header set X-XSS-Protection "1; mode=block"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # Cache control
@@ -50,4 +52,10 @@ ErrorDocument 404 /404.html
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType text/css "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 month"
-</IfModule> 
+</IfModule>
+
+# Prevent access to specific files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch> 
