@@ -11,18 +11,22 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.1.1",
+    "@prisma/client": "^6.9.0",
     "clsx": "^2.1.0",
     "next": "14.0.4",
+    "next-auth": "^4.24.11",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.57.0",
+    "react-hot-toast": "^2.5.2",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/node": "^20.19.0",
+    "@types/react": "^18.3.23",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.16",
     "eslint": "^8",
@@ -30,6 +34,7 @@
     "postcss": "^8.4.32",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.1",
+    "prisma": "^6.9.0",
     "tailwindcss": "^3.3.6",
     "typescript": "^5"
   }

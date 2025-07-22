@@ -1,0 +1,347 @@
+classDiagram
+    class User {
+        +String username
+        +String[] roles
+        +String email
+        +login()
+        +logout()
+        +verifyPrivileges()
+        +updateProfile()
+    }
+
+    class AuthContext {
+        +User user
+        +Boolean isAuthenticated
+        +Boolean is2FAEnabled
+        +login()
+        +logout()
+        +verify2FA()
+        +refreshToken()
+    }
+
+    class AppContext {
+        +String appName
+        +Object themeColors
+        +Boolean isLoading
+        +updateAppName()
+        +updateThemeColors()
+        +fetchSettings()
+    }
+
+    class PMSClient {
+        +String clientName
+        +String accountNumber
+        +String schemeNumber
+        +String type
+        +String email
+        +viewDetails()
+        +editDetails()
+        +onboard()
+        +updateKYC()
+    }
+
+    class Report {
+        +String type
+        +Date date
+        +Object filters
+        +generateReport()
+        +downloadReport()
+        +validateData()
+        +exportToExcel()
+    }
+
+    class Scheme {
+        +String schemeNumber
+        +String name
+        +String type
+        +Object settings
+        +manageScheme()
+        +updateSettings()
+        +calculateNAV()
+        +processEOD()
+    }
+
+    class Benefit {
+        +String requestId
+        +String type
+        +String status
+        +Date requestDate
+        +process()
+        +approve()
+        +track()
+        +calculateAmount()
+        +validateEligibility()
+    }
+
+    class Payment {
+        +String transactionId
+        +Number amount
+        +String status
+        +Date date
+        +process()
+        +validate()
+        +allocate()
+        +reverse()
+        +reconcile()
+    }
+
+    class EODProcess {
+        +Date processDate
+        +String status
+        +Object settings
+        +run()
+        +reverse()
+        +validate()
+        +calculateAccruals()
+        +updateNAV()
+    }
+
+    class NavigationMenu {
+        +Array items
+        +Object permissions
+        +render()
+        +filterByRole()
+        +updateAccess()
+    }
+
+    class Layout {
+        +Component header
+        +Component sidebar
+        +Component main
+        +render()
+        +toggleSidebar()
+    }
+
+    class H2HIntegration {
+        +String bankId
+        +Object config
+        +processContribution()
+        +verifyTransaction()
+        +reconcilePayment()
+    }
+
+    class AuditTrail {
+        +String userId
+        +String action
+        +Date timestamp
+        +Object changes
+        +logAction()
+        +viewHistory()
+        +generateReport()
+    }
+
+    class FamilyGroup {
+        +String groupId
+        +String name
+        +Array members
+        +addMember()
+        +removeMember()
+        +updateDetails()
+    }
+
+    class NotificationSystem {
+        +Array templates
+        +Object settings
+        +sendNotification()
+        +updateTemplate()
+        +processQueue()
+    }
+
+    class PortfolioManager {
+        +String managerId
+        +String name
+        +Array clientPortfolios
+        +Array poolPortfolios
+        +manageDiscretionary()
+        +managePooled()
+        +generateReports()
+        +trackPerformance()
+        +rebalancePortfolio()
+    }
+
+    class DiscretionaryPortfolio {
+        +String portfolioId
+        +PMSClient client
+        +Object investmentStrategy
+        +Array holdings
+        +calculateReturns()
+        +rebalance()
+        +generateReport()
+        +trackPerformance()
+    }
+
+    class PooledPortfolio {
+        +String poolId
+        +String name
+        +Number unitPrice
+        +Array investors
+        +Array holdings
+        +calculateNAV()
+        +allocateUnits()
+        +processSubscription()
+        +processRedemption()
+    }
+
+    class Trade {
+        +String tradeId
+        +String securityId
+        +Number quantity
+        +Number price
+        +Date tradeDate
+        +String status
+        +execute()
+        +settle()
+        +cancel()
+        +reconcile()
+    }
+
+    class Security {
+        +String securityId
+        +String type
+        +String issuer
+        +Number faceValue
+        +Date maturityDate
+        +updatePrice()
+        +calculateYield()
+        +trackCorporateActions()
+    }
+
+    class InvestmentStrategy {
+        +String strategyId
+        +String name
+        +Object riskProfile
+        +Object assetAllocation
+        +validateCompliance()
+        +rebalance()
+        +trackDeviation()
+    }
+
+    class RiskManagement {
+        +String portfolioId
+        +Object limits
+        +Object exposure
+        +validateLimits()
+        +calculateVaR()
+        +trackExposure()
+        +generateAlerts()
+    }
+
+    class Settlement {
+        +String settlementId
+        +Trade trade
+        +String status
+        +Date settlementDate
+        +process()
+        +verify()
+        +generateInstructions()
+    }
+
+    class CorporateAction {
+        +String actionId
+        +String securityId
+        +String type
+        +Date recordDate
+        +process()
+        +calculateImpact()
+        +applyAction()
+    }
+
+    class AccountingService {
+        +processJournalEntries()
+        +generateTrialBalance()
+        +createFinancialStatements()
+    }
+
+    class BenefitService {
+        +calculateBenefitAmount()
+        +processBenefitRequest()
+        +validateBenefitEligibility()
+    }
+
+    class HolidayNotificationService {
+        +sendHolidayNotifications()
+        +scheduleNotifications()
+        +customizeTemplates()
+    }
+
+    class PaymentAllocationService {
+        +allocatePayments()
+        +reconcilePayments()
+        +generateReports()
+    }
+
+    class ReportService {
+        +generateClientReports()
+        +generateSchemeReports()
+        +generateAuditReports()
+    }
+
+    class ScheduleComparisonService {
+        +compareSchedules()
+        +generateReport()
+        +identifyDiscrepancies()
+    }
+
+    class SchemeValidationService {
+        +validateSchemeData()
+        +checkCompliance()
+        +generateValidationReports()
+    }
+
+    class SettlementService {
+        +processSettlements()
+        +reconcileTransactions()
+        +generateSettlementReports()
+    }
+
+    class SurchargeService {
+        +calculateSurcharges()
+        +applySurcharges()
+        +generateSurchargeReports()
+    }
+
+    class ValidationService {
+        +validateClientData()
+        +validateTransactionData()
+        +generateValidationReports()
+    }
+
+    AuthContext --> User : manages
+    AppContext --> User : configures for
+    User --> PMSClient : manages
+    User --> Report : generates
+    PMSClient --> Scheme : belongs to
+    Scheme --> Benefit : processes
+    Scheme --> Payment : handles
+    User --> EODProcess : executes
+    Report --> Scheme : analyzes
+    Layout --> NavigationMenu : contains
+    User --> NavigationMenu : views
+    PMSClient --> FamilyGroup : belongs to
+    User --> AuditTrail : generates
+    Payment --> H2HIntegration : processes through
+    User --> NotificationSystem : receives from
+    Scheme --> NotificationSystem : triggers
+    Benefit --> NotificationSystem : triggers
+    PortfolioManager --> DiscretionaryPortfolio : manages
+    PortfolioManager --> PooledPortfolio : manages
+    DiscretionaryPortfolio --> PMSClient : belongs to
+    DiscretionaryPortfolio --> InvestmentStrategy : follows
+    PooledPortfolio --> InvestmentStrategy : follows
+    DiscretionaryPortfolio --> Trade : executes
+    PooledPortfolio --> Trade : executes
+    Trade --> Security : involves
+    Trade --> Settlement : requires
+    Security --> CorporateAction : undergoes
+    DiscretionaryPortfolio --> RiskManagement : monitored by
+    PooledPortfolio --> RiskManagement : monitored by
+    AccountingService ..> Scheme
+    BenefitService ..> Benefit
+    HolidayNotificationService ..> NotificationSystem
+    PaymentAllocationService ..> Payment
+    ReportService ..> Report
+    ScheduleComparisonService ..> Scheme
+    SchemeValidationService ..> Scheme
+    SettlementService ..> Settlement
+    SurchargeService ..> Scheme
+    ValidationService ..> PMSClient

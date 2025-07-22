@@ -13,6 +13,7 @@ interface ImageSliderProps {
 
 const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -51,15 +52,19 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
+            <div className={`absolute inset-0 bg-gray-200 ${isLoading ? 'visible' : 'invisible'}`} />
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              className="object-cover"
-              sizes="100vw"
+              className={`object-cover transition-opacity duration-300 ${
+                isLoading ? 'opacity-0' : 'opacity-100'
+              }`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
               priority={index === 0}
-              quality={100}
-              style={{ objectPosition: '50% 50%' }}
+              quality={85}
+              onLoadingComplete={() => setIsLoading(false)}
+              loading={index === 0 ? 'eager' : 'lazy'}
             />
           </div>
         ))}

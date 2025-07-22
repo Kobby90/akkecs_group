@@ -64,15 +64,6 @@ const Navbar = () => {
             </li>
             <li>
               <Link 
-                href="/industries" 
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Industries
-              </Link>
-            </li>
-            <li>
-              <Link 
                 href="/contact" 
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 transition-colors"
                 onClick={() => setIsOpen(false)}

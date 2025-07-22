@@ -1,0 +1,170 @@
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant AuthService
+    participant APIGateway
+    participant Backend
+    participant Database
+    participant NotificationSystem
+    participant H2HSystem
+    participant CacheService
+    participant AuditService
+    participant PortfolioManager
+    participant RiskSystem
+    participant TradingSystem
+    participant SettlementSystem
+    participant AccountingService
+    participant BenefitService
+    participant HolidayNotificationService
+    participant PaymentAllocationService
+    participant ReportService
+    participant ScheduleComparisonService
+    participant SchemeValidationService
+    participant SurchargeService
+    participant ValidationService
+
+    %% Authentication Flow
+    User->>Frontend: Login with credentials
+    Frontend->>AuthService: Authenticate user
+    AuthService->>Database: Validate credentials
+    Database-->>AuthService: Return user data
+    AuthService->>AuthService: Generate JWT token
+    AuthService-->>Frontend: Return JWT token
+    Frontend->>Frontend: Store token & user data
+    Frontend-->>User: Show dashboard
+
+    %% PMS Client Management
+    User->>Frontend: Access PMS section
+    Frontend->>APIGateway: Request client list
+    APIGateway->>CacheService: Check cached data
+    CacheService-->>APIGateway: Return cache hit/miss
+    APIGateway->>Backend: Forward request if cache miss
+    Backend->>Database: Query PMS clients
+    Database-->>Backend: Return client data
+    Backend->>CacheService: Update cache
+    Backend-->>APIGateway: Format response
+    APIGateway-->>Frontend: Return client list
+    Frontend-->>User: Display client list
+
+    %% Report Generation
+    User->>Frontend: Request report
+    Frontend->>APIGateway: Submit report parameters
+    APIGateway->>Backend: Process report request
+    Backend->>Database: Fetch report data
+    Database-->>Backend: Return raw data
+    Backend->>ReportService: Generate report
+    ReportService-->>Backend: Return formatted report
+    Backend->>AuditService: Log report generation
+    Backend-->>APIGateway: Return formatted report
+    APIGateway-->>Frontend: Send report
+    Frontend-->>User: Display report
+
+    %% EOD Process
+    User->>Frontend: Initiate EOD process
+    Frontend->>APIGateway: Request EOD execution
+    APIGateway->>Backend: Start EOD process
+    Backend->>Database: Begin transaction
+    Backend->>Backend: Run EOD calculations
+    Backend->>AccountingService: Process accounting entries
+    AccountingService-->>Backend: Return accounting results
+    Backend->>Database: Update system state
+    Backend->>NotificationSystem: Send completion notifications
+    Database-->>Backend: Confirm updates
+    Backend->>AuditService: Log EOD completion
+    Backend-->>APIGateway: Return process status
+    APIGateway-->>Frontend: Update status
+    Frontend-->>User: Show completion status
+
+    %% Benefit Processing
+    User->>Frontend: Submit benefit request
+    Frontend->>APIGateway: Create benefit request
+    APIGateway->>Backend: Process request
+    Backend->>BenefitService: Calculate benefits
+    BenefitService-->>Backend: Return benefit amount
+    Backend->>Database: Store request
+    Backend->>NotificationSystem: Send approval notifications
+    Database-->>Backend: Confirm update
+    Backend->>AuditService: Log benefit request
+    Backend-->>APIGateway: Return request status
+    APIGateway-->>Frontend: Update UI
+    Frontend-->>User: Show confirmation
+
+    %% H2H Integration
+    User->>Frontend: Upload contribution file
+    Frontend->>APIGateway: Submit file
+    APIGateway->>Backend: Process file
+    Backend->>H2HSystem: Verify with bank
+    H2HSystem-->>Backend: Confirm verification
+    Backend->>Database: Store contribution
+    Backend->>NotificationSystem: Send processing notification
+    Database-->>Backend: Confirm storage
+    Backend->>AuditService: Log H2H transaction
+    Backend-->>APIGateway: Return status
+    APIGateway-->>Frontend: Update status
+    Frontend-->>User: Show result
+
+    %% Discretionary Portfolio Management
+    User->>Frontend: Create discretionary portfolio
+    Frontend->>APIGateway: Submit portfolio details
+    APIGateway->>Backend: Process portfolio creation
+    Backend->>Database: Create portfolio record
+    Backend->>RiskSystem: Set up risk parameters
+    RiskSystem-->>Backend: Confirm setup
+    Backend-->>APIGateway: Return portfolio details
+    APIGateway-->>Frontend: Update UI
+    Frontend-->>User: Show portfolio dashboard
+
+    %% Pool Portfolio Management
+    User->>Frontend: Create pool portfolio
+    Frontend->>APIGateway: Submit pool details
+    APIGateway->>Backend: Process pool creation
+    Backend->>Database: Create pool record
+    Backend->>RiskSystem: Set up pool limits
+    RiskSystem-->>Backend: Confirm limits
+    Backend-->>APIGateway: Return pool details
+    APIGateway-->>Frontend: Update UI
+    Frontend-->>User: Show pool dashboard
+
+    %% Trade Execution
+    User->>Frontend: Place trade order
+    Frontend->>APIGateway: Submit trade
+    APIGateway->>Backend: Process trade
+    Backend->>RiskSystem: Validate limits
+    RiskSystem-->>Backend: Confirm compliance
+    Backend->>TradingSystem: Execute trade
+    TradingSystem->>SettlementSystem: Initiate settlement
+    SettlementSystem-->>TradingSystem: Confirm initiation
+    TradingSystem-->>Backend: Return trade status
+    Backend->>Database: Update portfolio
+    Backend->>NotificationSystem: Send trade confirmation
+    Backend-->>APIGateway: Return updated status
+    APIGateway-->>Frontend: Update trade status
+    Frontend-->>User: Show trade confirmation
+
+    %% Portfolio Rebalancing
+    User->>Frontend: Request rebalancing
+    Frontend->>APIGateway: Submit rebalance request
+    APIGateway->>Backend: Process rebalancing
+    Backend->>PortfolioManager: Calculate adjustments
+    PortfolioManager->>RiskSystem: Validate changes
+    RiskSystem-->>PortfolioManager: Confirm compliance
+    PortfolioManager->>TradingSystem: Generate orders
+    TradingSystem-->>PortfolioManager: Return order list
+    PortfolioManager-->>Backend: Return rebalance plan
+    Backend->>Database: Update targets
+    Backend-->>APIGateway: Return rebalance details
+    APIGateway-->>Frontend: Show rebalance plan
+    Frontend-->>User: Display changes
+
+    %% NAV Calculation
+    User->>Frontend: Request NAV calculation
+    Frontend->>APIGateway: Submit NAV request
+    APIGateway->>Backend: Process NAV calculation
+    Backend->>Database: Fetch holdings
+    Database-->>Backend: Return positions
+    Backend->>Backend: Calculate valuations
+    Backend->>Database: Update NAV history
+    Backend->>NotificationSystem: Send NAV updates
+    Backend-->>APIGateway: Return NAV details
+    APIGateway-->>Frontend: Update NAV display
+    Frontend-->>User: Show NAV information

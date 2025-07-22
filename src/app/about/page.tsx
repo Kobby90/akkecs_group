@@ -25,55 +25,64 @@ export default function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-blue-100 via-blue-50 to-white">
         <div className="max-w-screen-xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="grid md:grid-cols-2 gap-6 items-center">
+            <div className="bg-white rounded-2xl border border-blue-100 shadow-xl p-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-gray-600 mb-6">
                 To empower financial institutions with cutting-edge technology solutions that streamline operations, ensure compliance, and drive growth.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <svg className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span className="ml-3 text-gray-600">Delivering innovative financial software solutions</span>
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 mr-3 mt-1">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </span>
+                  <span className="text-gray-700">Delivering innovative financial software solutions</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span className="ml-3 text-gray-600">Ensuring regulatory compliance and security</span>
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 mr-3 mt-1">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </span>
+                  <span className="text-gray-700">Ensuring regulatory compliance and security</span>
                 </li>
                 <li className="flex items-start">
-                  <svg className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  <span className="ml-3 text-gray-600">Providing exceptional customer support</span>
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 mr-3 mt-1">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                  </span>
+                  <span className="text-gray-700">Providing exceptional customer support</span>
                 </li>
               </ul>
             </div>
-            <div className="relative h-[400px]">
-              <Image
-                src="/about-mission.jpg"
-                alt="Our Mission"
-                fill
-                className="object-cover rounded-lg shadow-lg"
-              />
+            <div className="flex justify-center">
+              <div className="w-full h-[320px] max-w-md rounded-2xl shadow-2xl overflow-hidden border border-blue-100 bg-white flex items-center justify-center">
+                <Image
+                  src="/about-mission.jpg"
+                  alt="Our Mission"
+                  width={500}
+                  height={320}
+                  className="object-cover w-full h-full"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100">
         <div className="max-w-screen-xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Values</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-6 rounded-2xl border border-blue-100 shadow-xl hover:shadow-blue-200 hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 via-blue-200 to-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-700 shadow-md group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               </div>
@@ -82,9 +91,9 @@ export default function About() {
                 Continuously pushing boundaries to deliver cutting-edge solutions that meet evolving market needs.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-6 rounded-2xl border border-blue-100 shadow-xl hover:shadow-blue-200 hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 via-blue-200 to-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-700 shadow-md group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
               </div>
@@ -93,9 +102,9 @@ export default function About() {
                 Maintaining the highest standards of security and data protection for our clients.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm">
-              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="bg-white p-6 rounded-2xl border border-blue-100 shadow-xl hover:shadow-blue-200 hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 via-blue-200 to-blue-100 rounded-full flex items-center justify-center mb-4 text-blue-700 shadow-md group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
               </div>
