@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',  // This will generate static files
-  images: {
-    unoptimized: true, // Required for static export
-  },
-  trailingSlash: true, // This helps with static hosting
+  // output: 'export',  // Removed to enable standard Next.js build on Vercel
+  // images: {
+  //   unoptimized: true, // Removed to allow Next.js image optimization
+  // },
+  trailingSlash: true, // Preserved
 };
 
 module.exports = nextConfig; 
