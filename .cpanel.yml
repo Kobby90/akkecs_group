@@ -1,25 +1,5 @@
 ---
 deployment:
   tasks:
-    # 1. Variable Setup
-    # CHANGE THIS to your actual Node.js Application Root path created in cPanel
-    - export DEPLOYPATH=/home/akkefkao/akkecs_group 
-    
-    # 2. Copy source files to the application directory
-    # We use rsync if available for efficiency, otherwise cp
-    # We explicitly exclude node_modules and .git from the COPY to avoid corruption, 
-    # relying on the install step below.
-    - /bin/cp -R * $DEPLOYPATH
-    - /bin/cp .env.production $DEPLOYPATH/.env || true # Copy env if it exists in repo (optional)
-    
-    # 3. Build & Install in Deployment Directory
-    - cd $DEPLOYPATH
-    
-    # We need full dependencies (including devDependencies) to build Next.js
-    - # NOTE: If this fails due to memory/time, run 'npm install && npm run build' manually via SSH once.
-    - npm install
-    - npm run build
-    
-    # 4. Restart the Node.js Application
-    - mkdir -p tmp
-    - touch tmp/restart.txt
+    - export DEPLOYPATH=/home/akkefkao/public_html
+    - /bin/cp -R out/* $DEPLOYPATH/
