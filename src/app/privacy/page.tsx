@@ -115,7 +115,7 @@ export default function Privacy() {
               Contact Us
             </h2>
             <p className="text-slate-400">
-              If you have any questions about this Privacy Policy, please contact us at <a href="mailto:privacy@akkecs.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">privacy@akkecs.com</a>
+              If you have any questions about this Privacy Policy, please contact us at <a href="mailto:legal@akkecsgroup.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">legal@akkecsgroup.com</a>
             </p>
           </div>
         </div>

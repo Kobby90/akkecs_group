@@ -19,15 +19,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <AnalyticsProvider />
-      </head>
       <body className={inter.className}>
         <Navbar />
         <main className="min-h-screen pt-16">
           {children}
         </main>
         <Footer />
+        <AnalyticsProvider />
       </body>
     </html>
   );

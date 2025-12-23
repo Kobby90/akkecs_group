@@ -45,27 +45,36 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
     <div className="absolute inset-0">
       {/* Images */}
       <div className="relative h-full w-full">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
-              }`}
-          >
-            <div className={`absolute inset-0 bg-gray-200 ${isLoading ? 'visible' : 'invisible'}`} />
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className={`object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'
+        {images.map((image, index) => {
+          // Only render current, next, and previous images in the DOM
+          const isCurrent = index === currentIndex;
+          const isNext = index === (currentIndex + 1) % images.length;
+          const isPrev = index === (currentIndex - 1 + images.length) % images.length;
+
+          if (!isCurrent && !isNext && !isPrev) return null;
+
+          return (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${isCurrent ? 'opacity-100' : 'opacity-0'
                 }`}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
-              priority={index === 0}
-              quality={85}
-              onLoad={() => setIsLoading(false)}
-              loading={index === 0 ? 'eager' : 'lazy'}
-            />
-          </div>
-        ))}
+            >
+              <div className={`absolute inset-0 bg-gray-200 ${isLoading ? 'visible' : 'invisible'}`} />
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className={`object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'
+                  }`}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
+                priority={isCurrent}
+                quality={85}
+                onLoad={() => setIsLoading(false)}
+                loading={isCurrent ? 'eager' : 'lazy'}
+              />
+            </div>
+          );
+        })}
       </div>
 
       {/* Navigation Arrows */}
@@ -93,8 +102,8 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-                ? 'bg-white w-6'
-                : 'bg-white/50 hover:bg-white/75'
+              ? 'bg-white w-6'
+              : 'bg-white/50 hover:bg-white/75'
               }`}
           >
             <span className="sr-only">Go to slide {index + 1}</span>

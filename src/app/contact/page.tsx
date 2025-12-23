@@ -29,8 +29,7 @@ export default function Contact() {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      // Initialize EmailJS with your public key
-      emailjs.init("LfdqLuKE1jKq9bd7X");
+      emailjs.init("KlzG2kNDRThmgyHCg");
 
       // Send auto-reply to the user
       await emailjs.send(
