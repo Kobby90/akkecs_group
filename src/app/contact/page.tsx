@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 interface FormStatus {
   submitting: boolean;
@@ -29,34 +28,23 @@ export default function Contact() {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      emailjs.init("KlzG2kNDRThmgyHCg");
+      // Determine endpoint based on environment
+      // Local dev uses Next.js API route, production uses PHP bridge
+      const endpoint = process.env.NODE_ENV === 'development' ? '/api/contact' : '/contact.php';
 
-      // Send auto-reply to the user
-      await emailjs.send(
-        "service_kjpqfzq",
-        "template_o8b29ef",
-        {
-          name: formData.name,
-          title: formData.message,
-          email: formData.email
-        }
-      );
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Send notification to admin with form details
-      await emailjs.send(
-        "service_kjpqfzq",
-        "template_vdrh57b",
-        {
-          title: "New Contact Form Submission",
-          name: formData.name,
-          time: new Date().toLocaleTimeString(),
-          message: `
-Company: ${formData.company}
-Phone: ${formData.phone}
-Message: ${formData.message}`,
-          email: formData.email
-        }
-      );
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || errorData.error || 'Failed to send message');
+      }
 
       setStatus({
         submitting: false,
@@ -74,12 +62,11 @@ Message: ${formData.message}`,
       });
 
     } catch (error: any) {
-      console.error('EmailJS Error:', error);
-      const errorMessage = error?.text || error?.message || 'Failed to send message. Please try again later.';
+      console.error('Submission Error:', error);
       setStatus({
         submitting: false,
         submitted: false,
-        error: errorMessage
+        error: error.message || 'Failed to send message. Please try again later.'
       });
     }
   };
