@@ -1,7 +1,11 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDemoModal } from '@/context/DemoContext';
 
 export default function Solutions() {
+  const { openDemoModal } = useDemoModal();
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
@@ -60,15 +64,15 @@ export default function Solutions() {
                 ))}
               </ul>
               <div className="mt-10">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={openDemoModal}
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300"
                 >
                   Request Demo
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
-                </Link>
+                </button>
               </div>
             </div>
             <div className="relative group perspective-1000">
@@ -136,15 +140,15 @@ export default function Solutions() {
                 ))}
               </ul>
               <div className="mt-10">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={openDemoModal}
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 hover:-translate-y-1 transition-all duration-300"
                 >
                   Explore Features
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -182,15 +186,15 @@ export default function Solutions() {
                 ))}
               </ul>
               <div className="mt-10">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={openDemoModal}
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-cyan-600 rounded-xl hover:bg-cyan-700 shadow-lg shadow-cyan-500/20 hover:-translate-y-1 transition-all duration-300"
                 >
                   See It In Action
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
-                </Link>
+                </button>
               </div>
             </div>
             <div className="relative group">

@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, company, phone, message } = body;
+        const { templateId, params } = body;
 
         const apiKey = process.env.V3_API;
 
@@ -19,15 +19,12 @@ export async function POST(request: Request) {
                 'Accept': 'application/json',
             },
             body: JSON.stringify({
-                templateId: 7,
-                to: [{ email: 'info@akkecsgroup.com', name: 'Akkecs Group Admin' }],
-                params: {
-                    name,
-                    email,
-                    company: company || 'N/A',
-                    phone: phone || 'N/A',
-                    message,
-                },
+                templateId: templateId || 7,
+                to: [
+                    { email: 'info@akkecsgroup.com', name: 'Akkecs Group Admin' },
+                    { email: (params?.email || body?.email), name: (params?.name || body?.name) || 'Valued Client' }
+                ],
+                params: params || body, // Fallback to whole body if params not separate
             }),
         });
 

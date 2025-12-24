@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import ImageSlider from "@/components/ImageSlider";
+import { useDemoModal } from "@/context/DemoContext";
 
 const heroImages = [
   // Original Images
@@ -48,6 +51,7 @@ const heroImages = [
 ];
 
 export default function Home() {
+  const { openDemoModal } = useDemoModal();
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -80,13 +84,14 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                <Link href="/contact"
+                <button
+                  onClick={openDemoModal}
                   className="btn-premium bg-blue-600 text-white hover:bg-blue-500 flex items-center justify-center">
                   Book a demo Session
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </Link>
+                </button>
                 <Link href="/solutions"
                   className="btn-premium glass text-white hover:bg-white/10 flex items-center justify-center">
                   Explore Solutions
@@ -172,24 +177,34 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-blue-900">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.3),transparent_70%)]"></div>
+      <section className="py-24 relative overflow-hidden group">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/cta-bg.png"
+            alt="CTA Background"
+            fill
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-900/60 to-slate-950/90"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.2),transparent_70%)]"></div>
         </div>
 
         <div className="max-w-screen-xl mx-auto px-6 text-center relative z-10">
-          <div className="max-w-3xl mx-auto rounded-[3rem] p-12 lg:p-16 border border-white/10 bg-slate-900/60 backdrop-blur-md">
+          <div className="max-w-3xl mx-auto rounded-[3rem] p-12 lg:p-16 border border-white/10 bg-slate-900/40 backdrop-blur-md shadow-2xl">
             <h2 className="mb-6 text-4xl font-extrabold text-white md:text-5xl tracking-tight">
               Ready to evolve your operations?
             </h2>
-            <p className="mb-10 text-xl text-blue-100 font-light">
+            <p className="mb-10 text-xl text-blue-100 font-light max-w-2xl mx-auto">
               Join leading firms who have optimized their infrastructure with AKKECS.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link href="/contact"
+              <button
+                onClick={openDemoModal}
                 className="btn-premium bg-white text-blue-900 hover:bg-blue-50 w-full sm:w-auto">
                 Schedule Demo
-              </Link>
+              </button>
               <Link href="/contact"
                 className="btn-premium border-2 border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
                 Contact Sales

@@ -19,20 +19,15 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 // TODO: REPLACE WITH YOUR KEY MANUALLY ON THE SERVER TO AVOID COMMITTING IT TO GIT
 $apiKey = "YOUR_BREVO_V3_API_KEY_HERE";
-$templateId = 7;
+$templateId = $input['templateId'] ?? 7;
 
 $payload = [
     "templateId" => $templateId,
     "to" => [
-        ["email" => "info@akkecsgroup.com", "name" => "Akkecs Group Admin"]
+        ["email" => "info@akkecsgroup.com", "name" => "Akkecs Group Admin"],
+        ["email" => ($input['params']['email'] ?? $input['email'] ?? ''), "name" => ($input['params']['name'] ?? $input['name'] ?? 'Valued Client')]
     ],
-    "params" => [
-        "name" => $input['name'] ?? 'N/A',
-        "email" => $input['email'] ?? 'N/A',
-        "company" => $input['company'] ?? 'N/A',
-        "phone" => $input['phone'] ?? 'N/A',
-        "message" => $input['message'] ?? 'N/A'
-    ]
+    "params" => $input['params'] ?? $input
 ];
 
 $ch = curl_init("https://api.brevo.com/v3/smtp/email");
