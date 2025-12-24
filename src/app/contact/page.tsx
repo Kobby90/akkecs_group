@@ -42,8 +42,20 @@ export default function Contact() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || errorData.error || 'Failed to send message');
+        let errorMessage = 'Failed to send message';
+        try {
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            const errorData = await response.json();
+            errorMessage = errorData.message || errorData.error || errorMessage;
+          } else {
+            // Handle non-JSON errors (like 403 Forbidden HTML pages)
+            errorMessage = `Server Error (${response.status}): ${response.statusText}`;
+          }
+        } catch (e) {
+          errorMessage = `Server Error (${response.status})`;
+        }
+        throw new Error(errorMessage);
       }
 
       setStatus({
