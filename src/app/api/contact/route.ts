@@ -21,7 +21,7 @@ export async function POST(request: Request) {
             body: JSON.stringify({
                 templateId: templateId || 7,
                 to: [
-                    { email: 'info@akkecsgroup.com', name: 'Akkecs Group Admin' },
+                    { email: 'info@conxeptcubes.com', name: 'Conxeptcubes Group Admin' },
                     { email: (params?.email || body?.email), name: (params?.name || body?.name) || 'Valued Client' }
                 ],
                 params: params || body, // Fallback to whole body if params not separate

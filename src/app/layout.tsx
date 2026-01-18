@@ -10,7 +10,7 @@ import { Providers } from "@/components/Providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AKKECS - Asset Management & Pension Fund Solutions",
+  title: "Conxeptcubes - Asset Management & Pension Fund Solutions",
   description: "Professional software solutions for Asset Management and Pension Fund Administration",
 };
 

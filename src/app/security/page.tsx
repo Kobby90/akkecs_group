@@ -6,7 +6,7 @@ export default function Security() {
 
         <div className="prose max-w-none">
           <p className="text-lg text-gray-600 mb-6">
-            At AKKECS TECHNOLOGIES, we prioritize the security of your data and systems. Our comprehensive security measures ensure the protection of your sensitive information.
+            At Conxeptcubes Technologies, we prioritize the security of your data and systems. Our comprehensive security measures ensure the protection of your sensitive information.
           </p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Data Protection</h2>
@@ -49,7 +49,7 @@ export default function Security() {
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Contact Security Team</h2>
           <p className="text-gray-600 mb-6">
-            For security-related inquiries or to report a security concern, please contact our security team at securitylegal@akkecsgroup.com
+            For security-related inquiries or to report a security concern, please contact our security team at securitylegal@conxeptcubes.com
           </p>
         </div>
       </div>

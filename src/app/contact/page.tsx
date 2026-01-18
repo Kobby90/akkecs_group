@@ -146,7 +146,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-6">
                     <p className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-1">Email</p>
-                    <p className="text-xl font-semibold text-white">info@akkecsgroup.com</p>
+                    <p className="text-xl font-semibold text-white">info@conxeptcubes.com</p>
                   </div>
                 </div>
 

@@ -23,7 +23,7 @@ export default function Terms() {
         <div className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
           <div className="prose prose-lg prose-invert max-w-none">
             <p className="lead text-xl text-slate-300">
-              Welcome to AKKECS TECHNOLOGIES. By accessing our website and services, you agree to these terms and conditions.
+              Welcome to Conxeptcubes Technologies. By accessing our website and services, you agree to these terms and conditions.
             </p>
 
             <div className="my-12 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
@@ -33,7 +33,7 @@ export default function Terms() {
               Services
             </h2>
             <p className="text-slate-400">
-              AKKECS TECHNOLOGIES provides asset management and pension fund administration solutions. We reserve the right to modify, suspend, or discontinue any part of our services at any time.
+              Conxeptcubes Technologies provides asset management and pension fund administration solutions. We reserve the right to modify, suspend, or discontinue any part of our services at any time.
             </p>
 
             <div className="my-12 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
@@ -69,7 +69,7 @@ export default function Terms() {
             </h2>
             <div className="bg-slate-800/30 border-l-4 border-cyan-500 p-6 rounded-r-xl">
               <p className="text-slate-300 m-0 text-base">
-                All content, features, and functionality of our services are owned by AKKECS TECHNOLOGIES and are protected by international copyright, trademark, and other intellectual property laws.
+                All content, features, and functionality of our services are owned by Conxeptcubes Technologies and are protected by international copyright, trademark, and other intellectual property laws.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ export default function Terms() {
               Limitation of Liability
             </h2>
             <p className="text-slate-400">
-              AKKECS TECHNOLOGIES shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use our services.
+              Conxeptcubes Technologies shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use our services.
             </p>
 
             <div className="my-12 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
@@ -99,7 +99,7 @@ export default function Terms() {
               <span className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center mr-3 text-cyan-400 text-sm">Contact</span>
             </h2>
             <p className="text-slate-400">
-              If you have any questions about these Terms of Service, please contact us at <a href="mailto:legal@akkecsgroup.com" className="text-cyan-400 hover:text-cyan-300 no-underline border-b border-cyan-400/30 hover:border-cyan-300">legal@akkecsgroup.com</a>
+              If you have any questions about these Terms of Service, please contact us at <a href="mailto:legal@conxeptcubes.com" className="text-cyan-400 hover:text-cyan-300 no-underline border-b border-cyan-400/30 hover:border-cyan-300">legal@conxeptcubes.com</a>
             </p>
           </div>
         </div>

@@ -197,7 +197,7 @@ export default function Home() {
               Ready to evolve your operations?
             </h2>
             <p className="mb-10 text-xl text-blue-100 font-light max-w-2xl mx-auto">
-              Join leading firms who have optimized their infrastructure with AKKECS.
+              Join leading firms who have optimized their infrastructure with CONXEPTCUBES.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <button

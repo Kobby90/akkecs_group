@@ -221,7 +221,7 @@ export default function Solutions() {
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4 md:text-4xl">Why Choose AKKECS?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4 md:text-4xl">Why Choose CONXEPTCUBES?</h2>
             <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-6"></div>
           </div>
 

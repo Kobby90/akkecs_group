@@ -11,15 +11,14 @@ const Footer = () => {
             <Link href="/" className="flex items-center space-x-3 mb-6 group">
               <Image
                 src="/logo.png"
-                alt="AKKECS Logo"
+                alt="Conxeptcubes Logo"
                 width={38}
                 height={38}
                 className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity"
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold tracking-tight text-white">
-                  AKKECS
-                </span>
+                  CONXEPTCUBES                </span>
                 <span className="text-[9px] font-black tracking-[0.2em] text-blue-500 uppercase">
                   Technologies
                 </span>
@@ -88,7 +87,7 @@ const Footer = () => {
                 {section.title === 'Legal' && (
                   <li className="pt-4">
                     <a
-                      href="http://www.akkecsgroup.com/webmail"
+                      href="http://www.conxeptcubes.com/webmail"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider hover:bg-blue-600 hover:text-white transition-all duration-300"
@@ -107,7 +106,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-xs tracking-wide">
-            © {new Date().getFullYear()} AKKECS TECHNOLOGIES. Engineered for excellence.
+            © {new Date().getFullYear()} Conxeptcubes Technologies. Engineered for excellence.
           </p>
           <div className="flex space-x-6 text-xs font-medium">
             <Link href="/privacy" className="hover:text-white transition-colors">Data Privacy</Link>

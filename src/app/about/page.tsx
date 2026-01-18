@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us - AKKECS',
+  title: 'About Us - CONXEPTCUBES',
   description: 'Learn about our mission to transform asset management and pension fund administration through innovative software solutions.',
 };
 
@@ -23,7 +23,7 @@ export default function About() {
             </div>
 
             <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl">
-              About <span className="text-gradient">AKKECS</span>
+              About <span className="text-gradient">CONXEPTCUBES</span>
             </h1>
 
             <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl">

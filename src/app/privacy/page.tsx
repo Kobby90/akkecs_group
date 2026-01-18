@@ -23,7 +23,7 @@ export default function Privacy() {
         <div className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
           <div className="prose prose-lg prose-invert max-w-none">
             <p className="lead text-xl text-slate-300">
-              At AKKECS TECHNOLOGIES, we take your privacy seriously. This privacy policy describes how we collect, use, and protect your personal information.
+              At Conxeptcubes Technologies, we take your privacy seriously. This privacy policy describes how we collect, use, and protect your personal information.
             </p>
 
             <div className="my-12 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
@@ -115,7 +115,7 @@ export default function Privacy() {
               Contact Us
             </h2>
             <p className="text-slate-400">
-              If you have any questions about this Privacy Policy, please contact us at <a href="mailto:legal@akkecsgroup.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">legal@akkecsgroup.com</a>
+              If you have any questions about this Privacy Policy, please contact us at <a href="mailto:legal@conxeptcubes.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">legal@conxeptcubes.com</a>
             </p>
           </div>
         </div>

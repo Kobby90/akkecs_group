@@ -163,7 +163,7 @@ const DemoModal = () => {
                                     name="company"
                                     value={formData.company}
                                     onChange={handleChange}
-                                    placeholder="Akkecs Group"
+                                    placeholder="Conxeptcubes Group"
                                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400 text-slate-900"
                                 />
                             </div>
