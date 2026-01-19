@@ -14,17 +14,17 @@ const Navbar = () => {
           <div className="relative">
             <div className="absolute -inset-1 bg-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
             <Image
-              src="/logo.png"
+              src="/Logo.png"
               alt="Conxeptcubes Logo"
-              width={42}
-              height={42}
+              width={75}
+              height={75}
               className="relative rounded-lg"
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+            <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
               CONXEPTCUBES            </span>
-            <span className="text-[10px] font-black tracking-[0.2em] text-blue-600 uppercase">
+            <span className="text-sm font-black tracking-[0.2em] text-blue-600 uppercase">
               Technologies
             </span>
           </div>
