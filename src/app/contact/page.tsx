@@ -134,7 +134,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-6">
                     <p className="text-sm font-medium text-slate-400 uppercase tracking-wider mb-1">Phone</p>
-                    <p className="text-xl font-semibold text-white">+233 (249) 885-362</p>
+                    <p className="text-xl font-semibold text-white">+233 (574) 299-407</p>
                   </div>
                 </div>
 

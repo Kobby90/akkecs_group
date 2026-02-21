@@ -10,9 +10,7 @@ export default function Solutions() {
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 bg-slate-950 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-700">
@@ -76,7 +74,6 @@ export default function Solutions() {
               </div>
             </div>
             <div className="relative group perspective-1000">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-2xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-700"></div>
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white transform group-hover:rotate-1 transition-transform duration-700 ease-out">
                 <Image
                   src="/asset-management.jpg"
@@ -97,7 +94,6 @@ export default function Solutions() {
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1 relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-700"></div>
               <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white transform group-hover:-rotate-1 transition-transform duration-700 ease-out">
                 <Image
                   src="/pension-fund.jpg"
@@ -198,7 +194,6 @@ export default function Solutions() {
               </div>
             </div>
             <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-700"></div>
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white transform group-hover:scale-[1.02] transition-transform duration-500">
                 <Image
                   src="/analytics.jpg"
@@ -215,9 +210,7 @@ export default function Solutions() {
 
       {/* Features Grid */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
-        {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -273,8 +266,7 @@ export default function Solutions() {
       </div>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-900 to-slate-900 relative text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.3),transparent_70%)]"></div>
+      <section className="py-24 bg-slate-900 border-t border-slate-800 relative text-center overflow-hidden">
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <h2 className="mb-6 text-3xl font-bold text-white md:text-5xl tracking-tight">
             Ready to evolve?

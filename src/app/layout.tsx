@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Conxeptcubes - Asset Management & Pension Fund Solutions",
   description: "Professional software solutions for Asset Management and Pension Fund Administration",
+  icons: {
+    icon: '/Logo.png',
+  },
 };
 
 export default function RootLayout({

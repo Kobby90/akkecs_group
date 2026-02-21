@@ -12,9 +12,8 @@ export default function About() {
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 bg-slate-950 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.2),transparent_70%)]"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]"></div>
+        {/* Subtle bottom border accent */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-700">
@@ -64,7 +63,6 @@ export default function About() {
             </div>
 
             <div className="relative">
-              <div className="absolute inset-0 bg-blue-600 rounded-[2rem] transform rotate-3 opacity-10"></div>
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                 <Image
                   src="/about-mission.jpg"
@@ -81,7 +79,6 @@ export default function About() {
 
       {/* Values Section */}
       <section className="py-24 bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">

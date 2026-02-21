@@ -70,7 +70,7 @@ const Footer = () => {
               items: [
                 { label: 'Privacy Policy', href: '/privacy' },
                 { label: 'Terms of Service', href: '/terms' },
-                { label: 'Security', href: '/privacy' }
+                { label: 'Security', href: '/security' }
               ]
             }
           ].map((section) => (

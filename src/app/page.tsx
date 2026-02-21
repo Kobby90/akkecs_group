@@ -58,10 +58,9 @@ export default function Home() {
       <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <ImageSlider images={heroImages} />
-          {/* Enhanced Gradient Overlays */}
+          {/* Gradient Overlays */}
           <div className="absolute inset-0 bg-slate-950/30 backdrop-blur-[1px]"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/45 to-transparent"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(37,99,235,0.2),transparent_50%)]"></div>
         </div>
 
         <div className="relative z-10 w-full">
@@ -111,7 +110,6 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-24 bg-slate-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-blue-100 rounded-full blur-[100px] opacity-50"></div>
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -188,7 +186,6 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-900/60 to-slate-950/90"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.2),transparent_70%)]"></div>
         </div>
 
         <div className="max-w-screen-xl mx-auto px-6 text-center relative z-10">
