@@ -15,6 +15,7 @@ const Footer = () => {
                 width={38}
                 height={38}
                 className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity"
+                unoptimized
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold tracking-tight text-white">

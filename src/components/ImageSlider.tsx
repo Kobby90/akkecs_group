@@ -70,7 +70,7 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
                 style={{ objectPosition: image.position || 'center' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
                 priority={isCurrent}
-                quality={85}
+                quality={90}
                 onLoad={() => setIsLoading(false)}
                 loading={isCurrent ? 'eager' : 'lazy'}
               />

@@ -70,6 +70,8 @@ export default function About() {
                   width={600}
                   height={450}
                   className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
+                  quality={95}
+                  priority
                 />
               </div>
             </div>
@@ -161,6 +163,9 @@ export default function About() {
                     alt={member.name}
                     fill
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    quality={95}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                    priority={idx < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
 

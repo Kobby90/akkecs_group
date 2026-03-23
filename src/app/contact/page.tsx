@@ -123,6 +123,8 @@ export default function Contact() {
                   alt="Contact Person"
                   fill
                   className="object-cover object-top"
+                  quality={95}
+                  sizes="(max-width: 768px) 100vw, 500px"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>

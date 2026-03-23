@@ -19,6 +19,8 @@ const Navbar = () => {
               width={75}
               height={75}
               className="relative rounded-lg"
+              unoptimized
+              priority
             />
           </div>
           <div className="flex flex-col leading-tight">
