@@ -17,9 +17,9 @@ const Navbar = () => {
               src="/logo.png"
               alt="Fintrivora Logo"
               width={75}
-              height={75}
+              height={50}
               className="relative rounded-lg"
-              unoptimized
+              quality={100}
               priority
             />
           </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-slate-500 rounded-xl hover:bg-slate-100/50 focus:outline-none transition-colors"
+          className="md:hidden inline-flex items-center p-2 w-12 h-12 justify-center text-slate-500 rounded-xl hover:bg-slate-100/50 focus:outline-none transition-colors"
           aria-controls="navbar-menu"
           aria-expanded={isOpen}
         >

@@ -13,9 +13,9 @@ const Footer = () => {
                 src="/logo.png"
                 alt="Fintrivora Logo"
                 width={38}
-                height={38}
+                height={25}
                 className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity"
-                unoptimized
+                quality={100}
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold tracking-tight text-white">

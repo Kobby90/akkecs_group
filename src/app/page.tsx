@@ -117,6 +117,8 @@ export default function Home() {
             alt="Background feature"
             fill
             className="object-cover object-center"
+            sizes="(max-width: 1024px) 1px, 50vw"
+            quality={60}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/50 to-slate-50"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50"></div>

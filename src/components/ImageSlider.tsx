@@ -68,7 +68,7 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
                 className={`object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'
                   }`}
                 style={{ objectPosition: image.position || 'center' }}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
+                sizes="100vw"
                 priority={isCurrent}
                 quality={90}
                 onLoad={() => setIsLoading(false)}
@@ -83,6 +83,7 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
       <button
         onClick={goToPrevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full z-10 transition-colors"
+        aria-label="Previous slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -91,6 +92,7 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
       <button
         onClick={goToNextSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-3 rounded-full z-10 transition-colors"
+        aria-label="Next slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -103,12 +105,15 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
-              ? 'bg-white w-6'
-              : 'bg-white/50 hover:bg-white/75'
-              }`}
+            className="p-4 group focus:outline-none"
+            aria-label={`Go to slide ${index + 1}`}
           >
-            <span className="sr-only">Go to slide {index + 1}</span>
+            <div
+              className={`h-2.5 rounded-full transition-all duration-300 ${index === currentIndex
+                ? 'bg-white w-6'
+                : 'bg-white/50 w-2.5 group-hover:bg-white/75'
+                }`}
+            />
           </button>
         ))}
       </div>
