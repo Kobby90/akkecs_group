@@ -35,8 +35,8 @@ export default function Privacy() {
             <p className="text-slate-400">
               By using our website or services, you acknowledge that you have read and understood this Privacy
               Policy. If you have any questions, contact us at{' '}
-              <a href="mailto:compliance@conxeptcubes.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
-                compliance@conxeptcubes.com
+              <a href="mailto:compliance@fintrivoratech.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
+                compliance@fintrivoratech.com
               </a>.
             </p>
 
@@ -260,8 +260,8 @@ export default function Privacy() {
             </div>
             <p className="text-slate-400 mt-4">
               To exercise any of these rights, contact us at{' '}
-              <a href="mailto:compliance@conxeptcubes.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
-                compliance@conxeptcubes.com
+              <a href="mailto:compliance@fintrivoratech.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
+                compliance@fintrivoratech.com
               </a>. We will respond within 40 days as required by Section 35(10) of Act 843.
             </p>
 
@@ -287,8 +287,8 @@ export default function Privacy() {
             <p className="text-slate-400">
               Our website and services are intended for business professionals and are not directed at children
               under 18. We do not knowingly collect personal information from children. Contact us at{' '}
-              <a href="mailto:compliance@conxeptcubes.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
-                compliance@conxeptcubes.com
+              <a href="mailto:compliance@fintrivoratech.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
+                compliance@fintrivoratech.com
               </a>{' '}
               if you believe we have done so.
             </p>
@@ -316,8 +316,8 @@ export default function Privacy() {
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
               <p className="text-slate-300 m-0">
                 <span className="font-semibold text-white">Email: </span>
-                <a href="mailto:compliance@conxeptcubes.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
-                  compliance@conxeptcubes.com
+                <a href="mailto:compliance@fintrivoratech.com" className="text-blue-400 hover:text-blue-300 no-underline border-b border-blue-400/30 hover:border-blue-300">
+                  compliance@fintrivoratech.com
                 </a>
               </p>
             </div>

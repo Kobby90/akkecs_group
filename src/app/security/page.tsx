@@ -293,8 +293,8 @@ export default function Security() {
             <div className="bg-green-900/20 border border-green-500/20 rounded-xl p-6 mb-6">
               <p className="text-green-100 m-0 text-base">
                 <span className="font-semibold text-white">Email:</span>{' '}
-                <a href="mailto:compliance@conxeptcubes.com" className="text-green-400 hover:text-green-300 no-underline border-b border-green-400/30 hover:border-green-300">
-                  compliance@conxeptcubes.com
+                <a href="mailto:compliance@fintrivoratech.com" className="text-green-400 hover:text-green-300 no-underline border-b border-green-400/30 hover:border-green-300">
+                  compliance@fintrivoratech.com
                 </a>
                 <br />
                 <span className="font-semibold text-white">Subject:</span>{' '}
@@ -363,8 +363,8 @@ export default function Security() {
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
               <p className="text-slate-300 m-0">
                 <span className="font-semibold text-white">Email: </span>
-                <a href="mailto:compliance@conxeptcubes.com" className="text-green-400 hover:text-green-300 no-underline border-b border-green-400/30 hover:border-green-300">
-                  compliance@conxeptcubes.com
+                <a href="mailto:compliance@fintrivoratech.com" className="text-green-400 hover:text-green-300 no-underline border-b border-green-400/30 hover:border-green-300">
+                  compliance@fintrivoratech.com
                 </a>
               </p>
             </div>

@@ -132,8 +132,8 @@ export default function Terms() {
             </ul>
             <p className="text-slate-400 mt-4">
               For any other use, contact us at{' '}
-              <a href="mailto:compliance@conxeptcubes.com" className="text-cyan-400 hover:text-cyan-300 no-underline border-b border-cyan-400/30 hover:border-cyan-300">
-                compliance@conxeptcubes.com
+              <a href="mailto:compliance@fintrivoratech.com" className="text-cyan-400 hover:text-cyan-300 no-underline border-b border-cyan-400/30 hover:border-cyan-300">
+                compliance@fintrivoratech.com
               </a>.
             </p>
 
@@ -231,8 +231,8 @@ export default function Terms() {
             <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6">
               <p className="text-slate-300 m-0">
                 <span className="font-semibold text-white">Email: </span>
-                <a href="mailto:compliance@conxeptcubes.com" className="text-cyan-400 hover:text-cyan-300 no-underline border-b border-cyan-400/30 hover:border-cyan-300">
-                  compliance@conxeptcubes.com
+                <a href="mailto:compliance@fintrivoratech.com" className="text-cyan-400 hover:text-cyan-300 no-underline border-b border-cyan-400/30 hover:border-cyan-300">
+                  compliance@fintrivoratech.com
                 </a>
               </p>
             </div>
