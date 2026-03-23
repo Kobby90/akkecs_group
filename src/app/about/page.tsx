@@ -141,7 +141,7 @@ export default function About() {
                 name: "Daniel Kobby Cudjoe",
                 role: "Chief Executive Officer",
                 image: "/Daniel2.png",
-                bio: "Strategic visionary leading Fintrivora&apos;s expansion into new financial markets and technology frontiers."
+                bio: "Strategic visionary leading Fintrivora's expansion into new financial markets and technology frontiers."
               },
               {
                 name: "Portia Nana Ama Dekyi",
