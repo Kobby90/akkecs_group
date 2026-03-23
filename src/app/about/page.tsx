@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us - CONXEPTCUBES',
+  title: 'About Us - FINTRIVORA',
   description: 'Learn about our mission to transform asset management and pension fund administration through innovative software solutions.',
 };
 
@@ -22,7 +22,7 @@ export default function About() {
             </div>
 
             <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl">
-              About <span className="text-gradient">CONXEPTCUBES</span>
+              About <span className="text-gradient">FINTRIVORA</span>
             </h1>
 
             <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl">
@@ -121,13 +121,76 @@ export default function About() {
         </div>
       </section>
 
+      {/* Leadership Team Section */}
+      <section className="py-24 bg-slate-50 relative">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4 backdrop-blur-md">
+              <span className="text-xs font-bold tracking-wider text-blue-600 uppercase">Expert Team</span>
+            </div>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Meet Our Leadership</h2>
+            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-6"></div>
+            <p className="text-slate-600 text-lg">Leading our mission to transform financial technology and administration across the region.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                name: "Daniel Adjetey",
+                role: "Chief Executive Officer",
+                image: "/Daniel1.png",
+                bio: "Strategic visionary leading Fintrivora&apos;s expansion into new financial markets and technology frontiers."
+              },
+              {
+                name: "Daniel Owusu",
+                role: "Operations Director",
+                image: "/Daniel2.png",
+                bio: "Overseeing day-to-day excellence and ensuring our software solutions deliver maximum impact for clients."
+              },
+              {
+                name: "Daniel Mensah",
+                role: "Technical Lead",
+                image: "/Daniel3.png",
+                bio: "Driving the engineering architecture and security standards that define our robust enterprise platforms."
+              }
+            ].map((member, idx) => (
+              <div key={idx} className="group">
+                <div className="relative aspect-[4/5] mb-6 rounded-2xl overflow-hidden shadow-xl border-4 border-white transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                  
+                  {/* Hover Info */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <p className="text-sm text-blue-300 font-medium mb-1">{member.role}</p>
+                    <h3 className="text-xl font-bold">{member.name}</h3>
+                  </div>
+                </div>
+                
+                <div className="text-center md:text-left px-2">
+                  <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
+                  <p className="text-blue-600 font-semibold text-sm mb-3">{member.role}</p>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {member.bio}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-white relative">
         <div className="max-w-screen-xl mx-auto px-6 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">Ready to transform your business?</h2>
             <p className="text-lg text-slate-600 mb-10">
-              Let's discuss how our solutions can help your organization thrive in the digital age.
+              Let&apos;s discuss how our solutions can help your organization thrive in the digital age.
             </p>
             <Link
               href="/contact"

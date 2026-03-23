@@ -21,7 +21,7 @@ export async function POST(request: Request) {
             body: JSON.stringify({
                 templateId: templateId || 7,
                 to: [
-                    { email: 'info@conxeptcubes.com', name: 'Conxeptcubes Group Admin' },
+                    { email: 'info@conxeptcubes.com', name: 'Fintrivora Group Admin' },
                     { email: (params?.email || body?.email), name: (params?.name || body?.name) || 'Valued Client' }
                 ],
                 params: params || body, // Fallback to whole body if params not separate
@@ -35,7 +35,8 @@ export async function POST(request: Request) {
         }
 
         return NextResponse.json({ success: true, data });
-    } catch (error: any) {
-        return NextResponse.json({ error: error.message }, { status: 500 });
+    } catch (error: unknown) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+        return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
 }

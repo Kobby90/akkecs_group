@@ -1,6 +1,17 @@
+import Image from 'next/image';
 export default function Terms() {
   return (
     <div className="bg-slate-950 min-h-screen pt-32 pb-20">
+      <div className="absolute inset-y-12 left-0 w-1/2 h-full z-0 opacity-[0.5] pointer-events-none hidden lg:block">
+        <Image
+          src="/portraite2.png"
+          alt="Security background"
+          fill
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950"></div>
+      </div>
       <div className="max-w-screen-lg mx-auto px-6 relative z-10">
         <div className="mb-12 text-center">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6 backdrop-blur-md">
@@ -17,7 +28,7 @@ export default function Terms() {
         <div className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
           <div className="prose prose-lg prose-invert max-w-none">
             <p className="lead text-xl text-slate-300">
-              Welcome to Conxeptcubes Technologies. By accessing our website or engaging our services, you agree
+              Welcome to Fintrivora Technologies. By accessing our website or engaging our services, you agree
               to be bound by these Terms of Service and our Privacy Policy. If you do not agree, please do not
               use our website or services.
             </p>
@@ -29,7 +40,7 @@ export default function Terms() {
               About Our Services
             </h2>
             <p className="text-slate-400">
-              Conxeptcubes Technologies provides technology services including software development, systems
+              Fintrivora Technologies provides technology services including software development, systems
               integration, asset management, and pension fund administration solutions to corporate clients.
             </p>
             <p className="text-slate-400">
@@ -97,7 +108,7 @@ export default function Terms() {
             <div className="bg-slate-800/30 border-l-4 border-cyan-500 p-6 rounded-r-xl">
               <p className="text-slate-300 m-0 text-base">
                 All content on our website — including text, graphics, logos, software, and overall design — is
-                owned by Conxeptcubes Technologies or our licensors and is protected by applicable copyright,
+                owned by Fintrivora Technologies or our licensors and is protected by applicable copyright,
                 trademark, and intellectual property laws.
               </p>
             </div>
@@ -163,7 +174,7 @@ export default function Terms() {
               Limitation of Liability
             </h2>
             <p className="text-slate-400">
-              To the fullest extent permitted by applicable Ghanaian law, Conxeptcubes Technologies shall not
+              To the fullest extent permitted by applicable Ghanaian law, Fintrivora Technologies shall not
               be liable for any indirect, incidental, special, consequential, or punitive damages arising from
               your use of, or inability to use, our website or services — including loss of profits, data, or
               business opportunities.

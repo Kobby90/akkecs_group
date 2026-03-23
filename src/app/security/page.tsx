@@ -1,6 +1,20 @@
+import Image from 'next/image';
+
 export default function Security() {
   return (
-    <div className="bg-slate-950 min-h-screen pt-32 pb-20">
+    <div className="bg-slate-950 min-h-screen pt-32 pb-20 relative overflow-hidden">
+      {/* Background Portrait Fade */}
+      <div className="absolute inset-y-0 right-0 w-1/2 z-0 opacity-[0.5] pointer-events-none hidden lg:block">
+        <Image
+          src="/portraite2.png"
+          alt="Security background"
+          fill
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950"></div>
+      </div>
+
       <div className="max-w-screen-lg mx-auto px-6 relative z-10">
         <div className="mb-12 text-center">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 mb-6 backdrop-blur-md">
@@ -17,7 +31,7 @@ export default function Security() {
         <div className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
           <div className="prose prose-lg prose-invert max-w-none">
             <p className="lead text-xl text-slate-300">
-              At Conxeptcubes Technologies, security is foundational to how we build and operate. As a technology
+              At Fintrivora Technologies, security is foundational to how we build and operate. As a technology
               company entrusted with sensitive data on behalf of our clients, we hold ourselves to rigorous
               standards and continuously invest in measures to protect the confidentiality, integrity, and
               availability of data in our care.

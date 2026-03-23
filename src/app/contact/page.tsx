@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import Image from 'next/image';
+
 interface FormStatus {
   submitting: boolean;
   submitted: boolean;
@@ -52,7 +54,7 @@ export default function Contact() {
             // Handle non-JSON errors (like 403 Forbidden HTML pages)
             errorMessage = `Server Error (${response.status}): ${response.statusText}`;
           }
-        } catch (e) {
+        } catch {
           errorMessage = `Server Error (${response.status})`;
         }
         throw new Error(errorMessage);
@@ -73,12 +75,13 @@ export default function Contact() {
         message: ''
       });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Failed to send message. Please try again later.';
       console.error('Submission Error:', error);
       setStatus({
         submitting: false,
         submitted: false,
-        error: error.message || 'Failed to send message. Please try again later.'
+        error: errorMessage
       });
     }
   };
@@ -94,22 +97,40 @@ export default function Contact() {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-slate-950 overflow-hidden">
+      <section className="relative py-24 bg-slate-950 overflow-hidden min-h-[500px] flex items-center">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.2),transparent_50%)]"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px]"></div>
 
-        <div className="max-w-screen-xl mx-auto px-6 relative z-10">
-          <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6 backdrop-blur-md">
-              <span className="text-xs font-bold tracking-wider text-blue-400 uppercase">Get in Touch</span>
+        <div className="max-w-screen-xl mx-auto px-6 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="animate-in fade-in slide-in-from-left-8 duration-700">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6 backdrop-blur-md">
+                <span className="text-xs font-bold tracking-wider text-blue-400 uppercase">Get in Touch</span>
+              </div>
+              <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl">
+                Let&apos;s Start a <span className="text-gradient">Conversation</span>
+              </h1>
+              <p className="text-xl text-slate-300">
+                Have questions about our solutions? Our team is ready to help you transform your financial operations.
+              </p>
             </div>
-            <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl">
-              Let's Start a <span className="text-gradient">Conversation</span>
-            </h1>
-            <p className="text-xl text-slate-300">
-              Have questions about our solutions? Our team is ready to help you transform your financial operations.
-            </p>
+
+            <div className="relative animate-in fade-in slide-in-from-right-8 duration-700">
+              <div className="relative aspect-[4/5] max-w-[450px] mx-auto lg:mr-0 rounded-[2.5rem] overflow-hidden border-8 border-white/5 shadow-2xl">
+                <Image
+                  src="/Daniel1.png"
+                  alt="Contact Person"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent"></div>
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-blue-600 rounded-2xl -z-10 blur-xl opacity-50"></div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-indigo-600 rounded-full -z-10 blur-2xl opacity-30"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -175,7 +196,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-2">Message Sent!</h3>
-                  <p className="text-slate-600 mb-8">Thank you for reaching out. We'll get back to you shortly.</p>
+                  <p className="text-slate-600 mb-8">Thank you for reaching out. We&apos;ll get back to you shortly.</p>
                   <button
                     onClick={() => setStatus(prev => ({ ...prev, submitted: false }))}
                     className="text-blue-600 font-semibold hover:text-blue-700"

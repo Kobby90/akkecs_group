@@ -3,11 +3,6 @@
 import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
-interface AnalyticsSettings {
-  gaId: string;
-  gtmId: string;
-  customScript: string;
-}
 
 export default function AnalyticsProvider() {
   const [isProduction] = useState(process.env.NEXT_PUBLIC_VERCEL_ENV === 'production');

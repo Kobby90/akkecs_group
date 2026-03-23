@@ -7,6 +7,7 @@ interface ImageSliderProps {
   images: {
     src: string;
     alt: string;
+    position?: string;
   }[];
   interval?: number;
 }
@@ -66,6 +67,7 @@ const ImageSlider = ({ images, interval = 5000 }: ImageSliderProps) => {
                 fill
                 className={`object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'
                   }`}
+                style={{ objectPosition: image.position || 'center' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 100vw"
                 priority={isCurrent}
                 quality={85}

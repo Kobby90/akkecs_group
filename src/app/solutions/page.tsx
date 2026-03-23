@@ -10,6 +10,7 @@ export default function Solutions() {
     <div className="bg-slate-50 min-h-screen">
       {/* Hero Section */}
       <section className="relative py-32 bg-slate-950 overflow-hidden">
+
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
@@ -214,7 +215,7 @@ export default function Solutions() {
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4 md:text-4xl">Why Choose CONXEPTCUBES?</h2>
+            <h2 className="text-3xl font-bold text-white mb-4 md:text-4xl">Why Choose FINTRIVORA?</h2>
             <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-6"></div>
           </div>
 
@@ -260,7 +261,7 @@ export default function Solutions() {
       <div className="max-w-screen-md mx-auto px-6 py-16">
         <div className="bg-blue-50 border border-blue-100 rounded-2xl p-8 text-center shadow-lg">
           <span className="text-xl font-medium text-blue-900">
-            All solutions can be <span className="font-bold text-blue-600">custom made</span> and <span className="font-bold text-blue-600">configured</span> to suit your organization's unique needs.
+            All solutions can be <span className="font-bold text-blue-600">custom made</span> and <span className="font-bold text-blue-600">configured</span> to suit your organization&apos;s unique needs.
           </span>
         </div>
       </div>

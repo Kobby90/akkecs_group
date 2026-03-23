@@ -24,7 +24,7 @@ $templateId = $input['templateId'] ?? 7;
 $payload = [
     "templateId" => $templateId,
     "to" => [
-        ["email" => "info@conxeptcubesgroup.com", "name" => "Conxeptcubes Group Admin"],
+        ["email" => "info@conxeptcubesgroup.com", "name" => "Fintrivora Group Admin"],
         ["email" => ($input['params']['email'] ?? $input['email'] ?? ''), "name" => ($input['params']['name'] ?? $input['name'] ?? 'Valued Client')]
     ],
     "params" => $input['params'] ?? $input

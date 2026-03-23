@@ -11,14 +11,14 @@ const Footer = () => {
             <Link href="/" className="flex items-center space-x-3 mb-6 group">
               <Image
                 src="/Logo.png"
-                alt="Conxeptcubes Logo"
+                alt="Fintrivora Logo"
                 width={38}
                 height={38}
                 className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity"
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold tracking-tight text-white">
-                  CONXEPTCUBES                </span>
+                  FINTRIVORA                </span>
                 <span className="text-[9px] font-black tracking-[0.2em] text-blue-500 uppercase">
                   Technologies
                 </span>
@@ -28,10 +28,10 @@ const Footer = () => {
               Empowering the next generation of financial institutions with secure, scalable enterprise systems.
             </p>
             <div className="flex space-x-4">
-              {['twitter', 'linkedin'].map((social) => (
+              {['twitter', 'https://www.linkedin.com/company/fintrivora-technologies'].map((social) => (
                 <a
                   key={social}
-                  href={`#${social}`}
+                  href={`${social}`}
                   className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-blue-500/50 hover:text-white transition-all group"
                 >
                   <span className="sr-only">{social}</span>
@@ -106,7 +106,7 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-xs tracking-wide">
-            © {new Date().getFullYear()} Conxeptcubes Technologies. Engineered for excellence.
+            © {new Date().getFullYear()} Fintrivora Technologies. Engineered for excellence.
           </p>
           <div className="flex space-x-6 text-xs font-medium">
             <Link href="/privacy" className="hover:text-white transition-colors">Data Privacy</Link>

@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="absolute -inset-1 bg-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
             <Image
               src="/Logo.png"
-              alt="Conxeptcubes Logo"
+              alt="Fintrivora Logo"
               width={75}
               height={75}
               className="relative rounded-lg"
@@ -23,7 +23,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col leading-tight">
             <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-              CONXEPTCUBES            </span>
+              FINTRIVORA            </span>
             <span className="text-sm font-black tracking-[0.2em] text-blue-600 uppercase">
               Technologies
             </span>

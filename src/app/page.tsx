@@ -31,22 +31,22 @@ const heroImages = [
     src: "/analytics1.jpg",
     alt: "analytics1"
   },
-  // New Premium Images
+
+  // Added Banner Images
   {
-    src: "/hero-dashboard.png",
-    alt: "Futuristic Financial Dashboard"
+    src: "/banner1.png",
+    alt: "Strategic Investment Management",
+    position: "top"
   },
   {
-    src: "/hero-growth.png",
-    alt: "Investment Growth & Security"
+    src: "/banner3.png",
+    alt: "Corporate Financial Solutions",
+    position: "top"
   },
   {
-    src: "/hero-network.png",
-    alt: "Global Secure Financial Network"
-  },
-  {
-    src: "/hero-analytics.png",
-    alt: "Real-time Asset Analytics"
+    src: "/banner4.png",
+    alt: "Enterprise Asset Administration",
+    position: "top"
   }
 ];
 
@@ -110,6 +110,18 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="py-24 bg-slate-50 relative overflow-hidden">
+        {/* Background Portrait Fade */}
+        <div className="absolute inset-y-0 left-0 w-1/2 z-0 opacity-[0.04] pointer-events-none hidden lg:block">
+          <Image
+            src="/portraite.png"
+            alt="Background feature"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/50 to-slate-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50"></div>
+        </div>
+
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -194,7 +206,7 @@ export default function Home() {
               Ready to evolve your operations?
             </h2>
             <p className="mb-10 text-xl text-blue-100 font-light max-w-2xl mx-auto">
-              Join leading firms who have optimized their infrastructure with CONXEPTCUBES.
+              Join leading firms who have optimized their infrastructure with FINTRIVORA.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <button

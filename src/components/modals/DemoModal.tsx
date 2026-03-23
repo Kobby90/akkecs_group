@@ -50,7 +50,7 @@ const DemoModal = () => {
                     } else {
                         errorMessage = `Server Error (${response.status})`;
                     }
-                } catch (e) {
+                } catch {
                     errorMessage = `Server Error (${response.status})`;
                 }
                 throw new Error(errorMessage);
@@ -65,12 +65,13 @@ const DemoModal = () => {
                 setStatus(prev => ({ ...prev, submitted: false }));
             }, 3000);
 
-        } catch (error: any) {
+        } catch (error: unknown) {
+            const errorMessage = error instanceof Error ? error.message : 'Failed to send message. Please try again later.';
             console.error('Demo Request Error:', error);
             setStatus({
                 submitting: false,
                 submitted: false,
-                error: error.message || 'Failed to send message. Please try again later.'
+                error: errorMessage
             });
         }
     };
@@ -163,7 +164,7 @@ const DemoModal = () => {
                                     name="company"
                                     value={formData.company}
                                     onChange={handleChange}
-                                    placeholder="Conxeptcubes Group"
+                                    placeholder="Fintrivora Group"
                                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-400 text-slate-900"
                                 />
                             </div>
