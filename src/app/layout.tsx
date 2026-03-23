@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Fintrivora - Asset Management & Pension Fund Solutions",
   description: "Professional software solutions for Asset Management and Pension Fund Administration",
   icons: {
-    icon: '/Logo.png',
+    icon: '/logo.png',
   },
 };
 

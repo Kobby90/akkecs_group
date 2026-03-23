@@ -136,23 +136,23 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-10">
             {[
               {
-                name: "Daniel Adjetey",
+                name: "Daniel Kobby Cudjoe",
                 role: "Chief Executive Officer",
-                image: "/Daniel1.png",
+                image: "/Daniel2.png",
                 bio: "Strategic visionary leading Fintrivora&apos;s expansion into new financial markets and technology frontiers."
               },
               {
-                name: "Daniel Owusu",
-                role: "Operations Director",
-                image: "/Daniel2.png",
-                bio: "Overseeing day-to-day excellence and ensuring our software solutions deliver maximum impact for clients."
-              },
+                name: "Portia Nana Ama Dekyi",
+                role: "Business Development Lead",
+                image: "/nanaama1.png",
+                bio: "Driving strategic partnerships and market expansion to deliver exceptional value to our clients."
+              }/*,
               {
                 name: "Daniel Mensah",
                 role: "Technical Lead",
                 image: "/Daniel3.png",
                 bio: "Driving the engineering architecture and security standards that define our robust enterprise platforms."
-              }
+              }*/
             ].map((member, idx) => (
               <div key={idx} className="group">
                 <div className="relative aspect-[4/5] mb-6 rounded-2xl overflow-hidden shadow-xl border-4 border-white transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
@@ -163,14 +163,14 @@ export default function About() {
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
-                  
+
                   {/* Hover Info */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                     <p className="text-sm text-blue-300 font-medium mb-1">{member.role}</p>
                     <h3 className="text-xl font-bold">{member.name}</h3>
                   </div>
                 </div>
-                
+
                 <div className="text-center md:text-left px-2">
                   <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
                   <p className="text-blue-600 font-semibold text-sm mb-3">{member.role}</p>
