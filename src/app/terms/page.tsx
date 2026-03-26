@@ -1,4 +1,13 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service - FINTRIVORA',
+  description: 'Review the terms of service for using FINTRIVORA\'s website and enterprise financial technology solutions.',
+  alternates: {
+    canonical: 'https://www.fintrivoratech.com/terms/',
+  },
+};
 export default function Terms() {
   return (
     <div className="bg-slate-950 min-h-screen pt-32 pb-20">

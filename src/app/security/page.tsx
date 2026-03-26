@@ -1,4 +1,13 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Security Practices - FINTRIVORA',
+  description: 'Learn about FINTRIVORA\'s commitment to data security, encryption, and regulatory compliance. We protect your financial data with enterprise-grade standards.',
+  alternates: {
+    canonical: 'https://www.fintrivoratech.com/security/',
+  },
+};
 
 export default function Security() {
   return (

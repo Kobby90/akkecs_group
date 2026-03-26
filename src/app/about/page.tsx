@@ -5,6 +5,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'About Us - FINTRIVORA',
   description: 'Learn about our mission to transform asset management and pension fund administration through innovative software solutions.',
+  alternates: {
+    canonical: 'https://www.fintrivoratech.com/about/',
+  },
 };
 
 export default function About() {

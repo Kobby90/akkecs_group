@@ -1,4 +1,13 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy - FINTRIVORA',
+  description: 'Read our transparency commitment and learn how FINTRIVORA collects, uses, and protects your personal information in compliance with the Data Protection Act.',
+  alternates: {
+    canonical: 'https://www.fintrivoratech.com/privacy/',
+  },
+};
 export default function Privacy() {
   return (
     <div className="bg-slate-950 min-h-screen pt-32 pb-20">
