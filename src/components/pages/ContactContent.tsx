@@ -29,9 +29,8 @@ export default function ContactContent() {
     setStatus({ submitting: true, submitted: false, error: null });
 
     try {
-      // Determine endpoint based on environment
-      // Local dev uses Next.js API route, production uses PHP bridge
-      const endpoint = process.env.NODE_ENV === 'development' ? '/api/contact' : '/contact.php';
+      // Use Next.js API route for all environments
+      const endpoint = '/api/contact';
 
       const response = await fetch(endpoint, {
         method: 'POST',

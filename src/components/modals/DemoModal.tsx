@@ -25,8 +25,8 @@ const DemoModal = () => {
         setStatus({ submitting: true, submitted: false, error: null });
 
         try {
-            // Use the same endpoint logic as the contact form
-            const endpoint = process.env.NODE_ENV === 'development' ? '/api/contact' : '/contact.php';
+            // Use the new demo API route
+            const endpoint = '/api/demo';
 
             const response = await fetch(endpoint, {
                 method: 'POST',

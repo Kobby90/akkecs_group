@@ -88,7 +88,7 @@ const Footer = () => {
                 {section.title === 'Legal' && (
                   <li className="pt-4">
                     <a
-                      href="http://www.fintrivoratech.com/webmail"
+                      href="https://server210.web-hosting.com:2096/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider hover:bg-blue-600 hover:text-white transition-all duration-300"
