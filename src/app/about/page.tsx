@@ -3,12 +3,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us - FINTRIVORA',
-  description: 'Learn about our mission to transform asset management and pension fund administration through innovative software solutions.',
+  title: 'About Fintrivora | Financial Software Pioneers',
+  description: "Learn about Fintrivora's mission to transform asset management and pension fund administration through innovative enterprise software solutions.",
+  keywords: [
+    'About Fintrivora',
+    'Financial Software Mission',
+    'Asset Management Expertise',
+    'Pension Fund Innovation',
+    'Fintech Leadership Team'
+  ],
   alternates: {
     canonical: 'https://www.fintrivoratech.com/about/',
   },
 };
+
 
 export default function About() {
   return (

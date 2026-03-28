@@ -75,8 +75,9 @@ export default function HomeContent() {
               </div>
 
               <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-[1.1] md:text-6xl xl:text-7xl text-white">
-                Next-Gen <span className="text-gradient">Enterprise Systems</span> for Asset Management
+                Next-Gen <span className="line-break text-gradient font-black">Asset Management</span> Software & Pension Systems
               </h1>
+
 
               <p className="mb-10 text-lg text-slate-300 md:text-xl max-w-2xl leading-relaxed">
                 Empowering modern financial institutions with streamlined operations, real-time analytics, and uncompromising security.

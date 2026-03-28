@@ -19,7 +19,7 @@ export default function SolutionsContent() {
               <span className="text-xs font-bold tracking-wider text-blue-400 uppercase">Our Capabilities</span>
             </div>
             <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl">
-              Enterprise-Grade <span className="text-gradient">Solutions</span>
+              Asset Management & <span className="text-gradient">Pension Solutions</span>
             </h1>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
               Comprehensive software ecosystems designed to streamline operations and drive exponential growth for financial institutions.
@@ -38,7 +38,7 @@ export default function SolutionsContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Asset Management Software</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Asset Management Software Solutions</h2>
               <p className="text-slate-600 mb-8 text-lg leading-relaxed">
                 A comprehensive platform designed to streamline portfolio management, automate workflows, and enhance decision-making.
               </p>
@@ -112,7 +112,7 @@ export default function SolutionsContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Pension Fund Administration</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Pension Fund Administration System</h2>
               <p className="text-slate-600 mb-8 text-lg leading-relaxed">
                 End-to-end pension fund management solution that simplifies administration and enhances member services.
               </p>
@@ -164,7 +164,7 @@ export default function SolutionsContent() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Analytics Services</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Financial Analytics & Data Services</h2>
               <p className="text-slate-600 mb-8 text-lg leading-relaxed">
                 A powerful analytics platform for fetching equity and GoG bond prices, running stock price analytics, and integrating real-time data into your core applications.
               </p>

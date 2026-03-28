@@ -2,12 +2,37 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Security Practices - FINTRIVORA',
-  description: 'Learn about FINTRIVORA\'s commitment to data security, encryption, and regulatory compliance. We protect your financial data with enterprise-grade standards.',
+  title: 'Enterprise-Grade Security & Data Integrity',
+  description: "Learn about Fintrivora's commitment to financial data security, military-grade encryption, and regulatory compliance (Act 843). We protect your asset management data with elite standards.",
+  keywords: [
+    'Financial Data Security',
+    'Asset Management Encryption',
+    'Pension Data Protection',
+    'Compliance Act 843',
+    'Multi-factor Authentication',
+    'Audit Trails Finance'
+  ],
   alternates: {
     canonical: 'https://www.fintrivoratech.com/security/',
   },
+  openGraph: {
+    title: 'Enterprise-Grade Security & Data Integrity | Fintrivora',
+    description: 'Learn about Fintrivora\'s commitment to data security and regulatory compliance.',
+    url: 'https://www.fintrivoratech.com/security/',
+    siteName: 'Fintrivora',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fintrivora Security',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
 };
+
 
 export default function Security() {
   return (
