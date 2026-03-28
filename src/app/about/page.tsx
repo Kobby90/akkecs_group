@@ -155,17 +155,17 @@ export default function About() {
                 bio: "Strategic visionary leading Fintrivora's expansion into new financial markets and technology frontiers."
               },
               {
+                name: "Samuel Murani",
+                role: "Technical Lead",
+                image: "/Samuel Murani.png",
+                bio: "Driving the engineering architecture and security standards that define our robust enterprise platforms."
+              },
+              {
                 name: "Portia Nana Ama Dekyi",
                 role: "Business Development Lead",
                 image: "/nanaama1.png",
                 bio: "Driving strategic partnerships and market expansion to deliver exceptional value to our clients."
-              }/*,
-              {
-                name: "Daniel Mensah",
-                role: "Technical Lead",
-                image: "/Daniel3.png",
-                bio: "Driving the engineering architecture and security standards that define our robust enterprise platforms."
-              }*/
+              }
             ].map((member, idx) => (
               <div key={idx} className="group">
                 <div className="relative aspect-[4/5] mb-6 rounded-2xl overflow-hidden shadow-xl border-4 border-white transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
