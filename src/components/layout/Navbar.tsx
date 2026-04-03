@@ -49,7 +49,7 @@ const Navbar = () => {
             {['Home', 'About', 'Solutions', 'Contact'].map((item) => (
               <li key={item}>
                 <Link
-                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                  href={item === 'Home' ? '/' : `/${item.toLowerCase()}/`}
                   className="block py-2 px-4 text-slate-700 dark:text-slate-200 font-semibold hover:text-blue-600 md:p-0 transition-all duration-200 relative group"
                   onClick={() => setIsOpen(false)}
                 >

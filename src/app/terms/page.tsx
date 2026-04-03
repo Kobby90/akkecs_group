@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.fintrivoratech.com/terms/',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function Terms() {

@@ -12,7 +12,7 @@ export default function JSONLD() {
     "description": "Enterprise software solutions for Asset Management and Pension Fund Administration.",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "Nigeria" // Adjust if needed
+      "addressCountry": "Ghana"
     },
     "sameAs": [
       // Add social media links here if available

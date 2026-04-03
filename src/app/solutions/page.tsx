@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.fintrivoratech.com/solutions/',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'Asset Management & Pension Administration Solutions | Fintrivora',
     description: 'Comprehensive software ecosystems for asset management, pension fund administration, and financial analytics.',

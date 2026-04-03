@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import AnalyticsProvider from "@/components/analytics/AnalyticsProvider";
 import { Providers } from "@/components/Providers";
 import JSONLD from "@/components/seo/JSONLD";
+import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,6 +64,17 @@ export const metadata: Metadata = {
   icons: {
     icon: '/logo.png',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 
@@ -94,6 +106,7 @@ export default function RootLayout({
         )}
         <Providers>
           <JSONLD />
+          <BreadcrumbSchema />
           <Navbar />
 
           <main className="min-h-screen pt-16">

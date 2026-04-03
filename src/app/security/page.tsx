@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.fintrivoratech.com/security/',
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'Enterprise-Grade Security & Data Integrity | Fintrivora',
     description: 'Learn about Fintrivora\'s commitment to data security and regulatory compliance.',

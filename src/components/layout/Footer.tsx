@@ -53,25 +53,25 @@ const Footer = () => {
             {
               title: 'Solutions',
               items: [
-                { label: 'Asset Management', href: '/solutions' },
-                { label: 'Pension Admin', href: '/solutions' },
-                { label: 'Analytics', href: '/solutions' }
+                { label: 'Asset Management', href: '/solutions/' },
+                { label: 'Pension Admin', href: '/solutions/' },
+                { label: 'Analytics', href: '/solutions/' }
               ]
             },
             {
               title: 'Company',
               items: [
-                { label: 'About Us', href: '/about' },
-                { label: 'Contact', href: '/contact' },
-                { label: 'Industries', href: '/solutions' }
+                { label: 'About Us', href: '/about/' },
+                { label: 'Contact', href: '/contact/' },
+                { label: 'Industries', href: '/solutions/' }
               ]
             },
             {
               title: 'Legal',
               items: [
-                { label: 'Privacy Policy', href: '/privacy' },
-                { label: 'Terms of Service', href: '/terms' },
-                { label: 'Security', href: '/security' }
+                { label: 'Privacy Policy', href: '/privacy/' },
+                { label: 'Terms of Service', href: '/terms/' },
+                { label: 'Security', href: '/security/' }
               ]
             }
           ].map((section) => (
@@ -110,8 +110,8 @@ const Footer = () => {
             © {new Date().getFullYear()} Fintrivora Technologies. Engineered for excellence.
           </p>
           <div className="flex space-x-6 text-xs font-medium">
-            <Link href="/privacy" className="hover:text-white transition-colors">Data Privacy</Link>
-            <Link href="/security" className="hover:text-white transition-colors">System Status</Link>
+            <Link href="/privacy/" className="hover:text-white transition-colors">Data Privacy</Link>
+            <Link href="/security/" className="hover:text-white transition-colors">System Status</Link>
           </div>
         </div>
       </div>
