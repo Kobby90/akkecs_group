@@ -78,6 +78,9 @@ export const metadata: Metadata = {
 };
 
 
+import { CookieProvider } from "@/context/CookieContext";
+import CookieConsent from "@/components/analytics/CookieConsent";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -93,29 +96,33 @@ export default function RootLayout({
         {/* Privacy-compliant analytics will be handled by AnalyticsProvider */}
       </head>
       <body className={inter.className}>
-        {/* Google Tag Manager (noscript) */}
-        {process.env.NEXT_PUBLIC_GTM_ID && (
-          <noscript>
-            <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            />
-          </noscript>
-        )}
-        <Providers>
-          <JSONLD />
-          <BreadcrumbSchema />
-          <Navbar />
+        <CookieProvider>
+          {/* Google Tag Manager (noscript) */}
+          {(process.env.NODE_ENV === 'production' || process.env.NEXT_PUBLIC_ENABLE_ANALYTICS === 'true') && process.env.NEXT_PUBLIC_GTM_ID && (
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              />
+            </noscript>
+          )}
+          <Providers>
+            <JSONLD />
+            <BreadcrumbSchema />
+            <Navbar />
 
-          <main className="min-h-screen pt-16">
-            {children}
-          </main>
-          <Footer />
-          <AnalyticsProvider />
-        </Providers>
+            <main className="min-h-screen pt-16">
+              {children}
+            </main>
+            <Footer />
+            <AnalyticsProvider />
+            <CookieConsent />
+          </Providers>
+        </CookieProvider>
       </body>
     </html>
   );
 }
+

@@ -1,7 +1,12 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useCookieConsent } from '@/context/CookieContext';
 
 const Footer = () => {
+  const { setShowBanner } = useCookieConsent();
+
   return (
     <footer className="bg-slate-950 text-slate-400 py-20 border-t border-slate-900">
       <div className="max-w-screen-xl mx-auto px-6">
@@ -86,7 +91,16 @@ const Footer = () => {
                   </li>
                 ))}
                 {section.title === 'Legal' && (
-                  <li className="pt-4">
+                  <li className="pt-4 flex flex-col space-y-4">
+                    <button
+                      onClick={() => setShowBanner(true)}
+                      className="text-sm text-left hover:text-blue-500 transition-colors flex items-center"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                      </svg>
+                      Manage Cookies
+                    </button>
                     <a
                       href="https://server210.web-hosting.com:2096/"
                       target="_blank"
@@ -111,6 +125,12 @@ const Footer = () => {
           </p>
           <div className="flex space-x-6 text-xs font-medium">
             <Link href="/privacy/" className="hover:text-white transition-colors">Data Privacy</Link>
+            <button 
+              onClick={() => setShowBanner(true)}
+              className="hover:text-white transition-colors"
+            >
+              Cookie Settings
+            </button>
             <Link href="/security/" className="hover:text-white transition-colors">System Status</Link>
           </div>
         </div>
@@ -119,4 +139,5 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
+ 
