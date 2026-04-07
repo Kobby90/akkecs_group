@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useDemoModal } from '@/context/DemoContext';
+import ModuleSlider from '@/components/ModuleSlider';
 
 export default function SolutionsContent() {
   const { openDemoModal } = useDemoModal();
@@ -28,8 +29,11 @@ export default function SolutionsContent() {
         </div>
       </section>
 
+      {/* Module Slider */}
+      <ModuleSlider />
+
       {/* Asset Management Solution */}
-      <section className="py-24 border-b border-slate-200">
+      <section id="modules" className="py-24 border-b border-slate-200">
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
