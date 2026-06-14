@@ -13,6 +13,7 @@ export async function POST(request: Request) {
         const port = Number(process.env.SMTP_PORT);
         const user = process.env.SMTP_USER;
         const pass = process.env.SMTP_PASS;
+        const adminEmail = process.env.NOTIFICATION_EMAIL || 'info@fintrivoratech.com';
 
         if (!host || !port || !user || !pass) {
             console.error('SMTP configuration missing:', { host: !!host, port: !!port, user: !!user, pass: !!pass });
@@ -38,10 +39,9 @@ export async function POST(request: Request) {
             },
         });
 
-        // Email to Admin
         const mailOptions = {
-            from: `"Fintrivora Demo Request" <${user}>`,
-            to: 'info@fintrivoratech.com',
+            from: '"Fintrivora Demo Request" <noreply@fintrivoratech.com>',
+            to: adminEmail,
             replyTo: email,
             subject: `New Demo Request from ${name} (${company})`,
             text: `
@@ -83,11 +83,11 @@ ${useCase}
                     body: JSON.stringify({
                         sender: {
                             name: "Fintrivora Demo Request",
-                            email: "info@fintrivoratech.com"
+                            email: "noreply@fintrivoratech.com"
                         },
                         to: [
                             {
-                                email: "info@fintrivoratech.com",
+                                email: adminEmail,
                                 name: "Admin"
                             }
                         ],
@@ -133,6 +133,6 @@ ${useCase}
     } catch (error: unknown) {
         const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
         console.error('SMTP Error (Demo):', error);
-        return NextResponse.json({ error: errorMessage }, { status: 500 });
+        return NextResponse.json({ error: 'Failed to send message. Please try again later.' }, { status: 500 });
     }
 }
