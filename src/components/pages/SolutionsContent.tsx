@@ -68,7 +68,7 @@ export default function SolutionsContent() {
               </ul>
               <div className="mt-10">
                 <button
-                   type="button"
+                  type="button"
                   onClick={openDemoModal}
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-lg shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300"
                 >
@@ -143,7 +143,7 @@ export default function SolutionsContent() {
               </ul>
               <div className="mt-10">
                 <button
-                   type="button"
+                  type="button"
                   onClick={openDemoModal}
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 hover:-translate-y-1 transition-all duration-300"
                 >
@@ -158,8 +158,112 @@ export default function SolutionsContent() {
         </div>
       </section>
 
+      {/* Skuulyz School Management System */}
+      <section id="skuulyz" className="py-24 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-block p-3 rounded-2xl bg-emerald-50 text-emerald-600 mb-6">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Skuulyz School Management System</h2>
+              <p className="text-slate-600 mb-8 text-lg leading-relaxed">
+                A modern, comprehensive school management ecosystem that connects administrators, teachers, students, and parents in one unified platform.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Academic & class administration with automated report cards",
+                  "Student information system (SIS) & comprehensive databases",
+                  "Teacher portals for grade entry, attendance, and lesson planning",
+                  "Parent/Student self-service portals with real-time progress tracking",
+                  "Billing, fee management, invoice tracking, and online payments",
+                  "Unified communication system with announcements and alerts",
+                  "Role-based secure access control and data protection",
+                  "Responsive interface optimized for desktop, tablet, and mobile"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start">
+                    <svg className="w-5 h-5 text-emerald-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span className="ml-3 text-slate-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-10">
+                <a
+                  href="https://skuulyx.up.railway.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-emerald-600 rounded-xl hover:bg-emerald-700 shadow-lg shadow-emerald-500/20 hover:-translate-y-1 transition-all duration-300"
+                >
+                  Visit Live Site
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div className="relative space-y-6">
+              <div className="relative group">
+                <div className="relative h-[300px] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white transform group-hover:scale-[1.02] transition-transform duration-500">
+                  <Image
+                    src="/landing.png"
+                    alt="Skuulyz Landing Page"
+                    fill
+                    className="object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-6 text-white text-lg font-bold">Portal Landing Page</div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative group">
+                  <div className="relative h-[180px] rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-white transform group-hover:scale-[1.03] transition-transform duration-500">
+                    <Image
+                      src="/admin-dash.png"
+                      alt="Skuulyz Admin Dashboard"
+                      fill
+                      className="object-cover object-top"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                    <div className="absolute bottom-2 left-4 text-white text-xs font-semibold">School Admin Dashboard</div>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <div className="relative h-[180px] rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-white transform group-hover:scale-[1.03] transition-transform duration-500">
+                    <Image
+                      src="/parent.png"
+                      alt="Skuulyz Parent Portal"
+                      fill
+                      className="object-cover object-top"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                    <div className="absolute bottom-2 left-4 text-white text-xs font-semibold">Parent Portal Dashboard</div>
+                  </div>
+                  {/*
+                  <div className="relative group">
+                    <div className="relative h-[180px] rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-white transform group-hover:scale-[1.03] transition-transform duration-500">
+                      <Image
+                        src="/mobile.png"
+                        alt="Mobile View"
+                        fill
+                        className="object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                      <div className="absolute bottom-2 left-4 text-white text-xs font-semibold">Mobile View</div>
+                    </div>
+                  </div>*/}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Analytics Services Solution */}
-      <section className="py-24 border-t border-slate-200">
+      <section className="py-24 bg-white border-t border-slate-200">
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -190,7 +294,7 @@ export default function SolutionsContent() {
               </ul>
               <div className="mt-10">
                 <button
-                   type="button"
+                  type="button"
                   onClick={openDemoModal}
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-cyan-600 rounded-xl hover:bg-cyan-700 shadow-lg shadow-cyan-500/20 hover:-translate-y-1 transition-all duration-300"
                 >

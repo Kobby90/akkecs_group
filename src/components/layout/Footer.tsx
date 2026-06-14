@@ -60,6 +60,7 @@ const Footer = () => {
               items: [
                 { label: 'Asset Management', href: '/solutions/' },
                 { label: 'Pension Admin', href: '/solutions/' },
+                { label: 'School Management', href: '/solutions/#skuulyz' },
                 { label: 'Analytics', href: '/solutions/' }
               ]
             },
