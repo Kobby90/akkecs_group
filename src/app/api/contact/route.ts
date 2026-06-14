@@ -26,6 +26,12 @@ export async function POST(request: Request) {
                 user: user,
                 pass: pass,
             },
+            connectionTimeout: 10000,
+            greetingTimeout: 10000,
+            socketTimeout: 10000,
+            tls: {
+                rejectUnauthorized: false,
+            },
         });
 
         // Email to Admin
