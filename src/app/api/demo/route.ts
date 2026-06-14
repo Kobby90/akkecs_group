@@ -31,6 +31,8 @@ export async function POST(request: Request) {
             connectionTimeout: 10000,
             greetingTimeout: 10000,
             socketTimeout: 10000,
+            logger: true,
+            debug: true,
             tls: {
                 rejectUnauthorized: false,
             },
@@ -65,7 +67,67 @@ ${useCase}
         };
 
         // Send the email
-        await transporter.sendMail(mailOptions);
+        try {
+            await transporter.sendMail(mailOptions);
+        } catch (smtpError) {
+            console.warn('SMTP failed, attempting Brevo HTTP API fallback...', smtpError);
+            const brevoApiKey = process.env.BREVO_API_KEY;
+            if (brevoApiKey) {
+                const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+                    method: 'POST',
+                    headers: {
+                        'accept': 'application/json',
+                        'api-key': brevoApiKey,
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        sender: {
+                            name: "Fintrivora Demo Request",
+                            email: "info@fintrivoratech.com"
+                        },
+                        to: [
+                            {
+                                email: "info@fintrivoratech.com",
+                                name: "Admin"
+                            }
+                        ],
+                        replyTo: {
+                            email: email,
+                            name: name
+                        },
+                        subject: `New Demo Request from ${name} (${company})`,
+                        textContent: `
+Name: ${name}
+Email: ${email}
+Company: ${company}
+Industry: ${industry}
+Use Case / Requirements:
+${useCase}
+                        `,
+                        htmlContent: `
+                            <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
+                                <h2 style="color: #2563eb;">New Demo Request</h2>
+                                <p><strong>Name:</strong> ${name}</p>
+                                <p><strong>Email:</strong> ${email}</p>
+                                <p><strong>Company:</strong> ${company}</p>
+                                <p><strong>Industry:</strong> ${industry}</p>
+                                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+                                <p><strong>Use Case / Requirements:</strong></p>
+                                <p style="white-space: pre-wrap;">${useCase}</p>
+                            </div>
+                        `
+                    })
+                });
+
+                if (!response.ok) {
+                    const errText = await response.text();
+                    throw new Error(`Brevo HTTP API Fallback failed: ${errText}`);
+                }
+                console.log('Successfully sent email via Brevo HTTP API fallback');
+            } else {
+                throw smtpError;
+            }
+        }
 
         return NextResponse.json({ success: true });
     } catch (error: unknown) {
