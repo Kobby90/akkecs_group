@@ -21,22 +21,21 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function About() {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-transparent min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-32 bg-slate-950 overflow-hidden">
-        {/* Subtle bottom border accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
+      <section className="relative py-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/20 via-transparent to-transparent"></div>
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6 backdrop-blur-md">
-              <span className="text-xs font-bold tracking-wider text-blue-400 uppercase">Who We Are</span>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-6 backdrop-blur-md">
+              <span className="text-xs font-bold tracking-wider text-indigo-400 uppercase font-mono">Who We Are</span>
             </div>
 
-            <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl">
+            <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-tight text-white md:text-6xl font-display">
               About <span className="text-gradient">FINTRIVORA</span>
             </h1>
 
@@ -48,14 +47,14 @@ export default function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 relative">
+      <section className="py-24 relative bg-transparent">
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="relative z-10">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-blue-50 rounded-[2rem] transform -rotate-2 opacity-50 blur-sm"></div>
-              <div className="relative bg-white rounded-[1.5rem] border border-slate-100 shadow-xl p-10 lg:p-12">
-                <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Mission</h2>
-                <p className="text-slate-600 mb-8 text-lg leading-relaxed">
+              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/5 to-cyan-500/5 rounded-[2rem] transform -rotate-1 opacity-50 blur-md pointer-events-none"></div>
+              <div className="relative bg-white/80 rounded-[1.5rem] border border-slate-200 shadow-xl p-10 lg:p-12 backdrop-blur-xl">
+                <h2 className="text-3xl font-bold text-slate-900 mb-6 font-display">Our Mission</h2>
+                <p className="text-slate-650 mb-8 text-lg leading-relaxed">
                   To empower financial institutions with cutting-edge technology solutions that streamline operations, ensure compliance, and drive growth.
                 </p>
                 <div className="space-y-6">
@@ -65,9 +64,9 @@ export default function About() {
                     "Providing exceptional customer support"
                   ].map((item, index) => (
                     <div key={index} className="flex items-start group">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
                         </svg>
                       </div>
                       <span className="ml-4 text-slate-700 font-medium pt-2">{item}</span>
@@ -78,7 +77,7 @@ export default function About() {
             </div>
 
             <div className="relative">
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-100">
                 <Image
                   src="/about-mission.jpg"
                   alt="Our Mission"
@@ -95,13 +94,12 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-slate-900 relative overflow-hidden">
-
+      <section className="py-24 bg-transparent relative overflow-hidden border-t border-b border-slate-200/60">
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4 md:text-4xl">Our Core Values</h2>
-            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-slate-400 text-lg">The principles that guide our innovation and service.</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 md:text-4xl font-display">Our Core Values</h2>
+            <div className="h-1 w-20 bg-indigo-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-slate-600 text-lg">The principles that guide our innovation and service.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -122,16 +120,19 @@ export default function About() {
                 icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
               }
             ].map((value, idx) => (
-              <div key={idx} className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 hover:bg-slate-800 hover:border-blue-500/30 transition-all duration-300 group hover:-translate-y-2">
-                <div className="w-16 h-16 bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={value.icon}></path>
-                  </svg>
+              <div key={idx} className="group glowing-card p-8 rounded-2xl relative">
+                <div className="glowing-card-glow"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-indigo-500/10 border border-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={value.icon}></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3 font-display">{value.title}</h3>
+                  <p className="text-slate-650 leading-relaxed">
+                    {value.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                <p className="text-slate-400 leading-relaxed">
-                  {value.desc}
-                </p>
               </div>
             ))}
           </div>
@@ -139,15 +140,15 @@ export default function About() {
       </section>
 
       {/* Leadership Team Section */}
-      <section className="py-24 bg-slate-50 relative">
+      <section className="py-24 bg-transparent relative">
         <div className="max-w-screen-xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4 backdrop-blur-md">
-              <span className="text-xs font-bold tracking-wider text-blue-600 uppercase">Expert Team</span>
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-4 backdrop-blur-md">
+              <span className="text-xs font-bold tracking-wider text-indigo-650 uppercase font-mono">Expert Team</span>
             </div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Meet Our Leadership</h2>
-            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-6"></div>
-            <p className="text-slate-600 text-lg">Leading our mission to transform financial technology and administration across the region.</p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight font-display">Meet Our Leadership</h2>
+            <div className="h-1 w-20 bg-indigo-500 mx-auto rounded-full mb-6"></div>
+            <p className="text-slate-650 text-lg">Leading our mission to transform financial technology and administration across the region.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
@@ -171,32 +172,29 @@ export default function About() {
                 bio: "Driving strategic partnerships and market expansion to deliver exceptional value to our clients."
               }
             ].map((member, idx) => (
-              <div key={idx} className="group">
-                <div className="relative aspect-[4/5] mb-6 rounded-2xl overflow-hidden shadow-xl border-4 border-white transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
-                    quality={95}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                    priority={idx < 2}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
-
-                  {/* Hover Info */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <p className="text-sm text-blue-300 font-medium mb-1">{member.role}</p>
-                    <h3 className="text-xl font-bold">{member.name}</h3>
+              <div key={idx} className="group glowing-card p-6 rounded-3xl relative">
+                <div className="glowing-card-glow"></div>
+                <div className="relative z-10">
+                  <div className="relative aspect-[4/5] mb-6 rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-slate-100 transition-all duration-500">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      quality={95}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                      priority={idx < 2}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-60"></div>
                   </div>
-                </div>
 
-                <div className="text-center md:text-left px-2">
-                  <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
-                  <p className="text-blue-600 font-semibold text-sm mb-3">{member.role}</p>
-                  <p className="text-slate-500 text-sm leading-relaxed">
-                    {member.bio}
-                  </p>
+                  <div className="px-2">
+                    <h3 className="text-xl font-bold text-slate-900 mb-1 font-display">{member.name}</h3>
+                    <p className="text-indigo-600 font-bold text-sm mb-3">{member.role}</p>
+                    <p className="text-slate-650 text-sm leading-relaxed">
+                      {member.bio}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -205,16 +203,16 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-white relative">
+      <section className="py-24 bg-slate-50 relative border-t border-slate-200/60">
         <div className="max-w-screen-xl mx-auto px-6 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight">Ready to transform your business?</h2>
-            <p className="text-lg text-slate-600 mb-10">
+            <h2 className="text-4xl font-bold text-slate-900 mb-6 tracking-tight font-display">Ready to transform your business?</h2>
+            <p className="text-lg text-slate-650 mb-10">
               Let&apos;s discuss how our solutions can help your organization thrive in the digital age.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300"
+              className="btn-premium-primary inline-flex items-center justify-center font-bold"
             >
               Contact Us
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,4 +224,4 @@ export default function About() {
       </section>
     </div>
   );
-} 
+}

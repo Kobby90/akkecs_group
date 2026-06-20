@@ -8,7 +8,7 @@ const Footer = () => {
   const { setShowBanner } = useCookieConsent();
 
   return (
-    <footer className="bg-slate-950 text-slate-400 py-20 border-t border-slate-900">
+    <footer className="bg-slate-950 text-slate-400 py-20 border-t border-slate-900 relative z-10">
       <div className="max-w-screen-xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-24 mb-16">
           {/* Company Info */}
@@ -19,18 +19,19 @@ const Footer = () => {
                 alt="Fintrivora Logo"
                 width={38}
                 height={25}
-                className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity"
+                className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity invert"
                 quality={100}
               />
-              <div className="flex flex-col leading-tight">
-                <span className="text-lg font-bold tracking-tight text-white">
-                  FINTRIVORA                </span>
-                <span className="text-[9px] font-black tracking-[0.2em] text-blue-500 uppercase">
+              <div className="flex flex-col leading-tight font-display">
+                <span className="text-lg font-bold tracking-tight text-white group-hover:text-indigo-400 transition-colors duration-300">
+                  FINTRIVORA
+                </span>
+                <span className="text-[9px] font-black tracking-[0.25em] text-indigo-400 uppercase">
                   Technologies
                 </span>
               </div>
             </Link>
-            <p className="text-sm leading-relaxed mb-6">
+            <p className="text-sm leading-relaxed mb-6 text-slate-400">
               Empowering the next generation of financial institutions with secure, scalable enterprise systems.
             </p>
             <div className="flex space-x-4">
@@ -38,7 +39,7 @@ const Footer = () => {
                 <a
                   key={social}
                   href={`${social}`}
-                  className="p-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-blue-500/50 hover:text-white transition-all group"
+                  className="p-2 rounded-lg bg-slate-900/50 border border-white/5 hover:border-indigo-500/50 hover:text-indigo-400 transition-all duration-300 group shadow-sm text-slate-400"
                 >
                   <span className="sr-only">{social}</span>
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -86,7 +87,7 @@ const Footer = () => {
               <ul className="space-y-4">
                 {section.items.map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="text-sm hover:text-blue-500 transition-colors">
+                    <Link href={item.href} className="text-sm hover:text-indigo-400 transition-colors">
                       {item.label}
                     </Link>
                   </li>
@@ -95,7 +96,7 @@ const Footer = () => {
                   <li className="pt-4 flex flex-col space-y-4">
                     <button
                       onClick={() => setShowBanner(true)}
-                      className="text-sm text-left hover:text-blue-500 transition-colors flex items-center"
+                      className="text-sm text-left hover:text-indigo-400 transition-colors flex items-center"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -106,7 +107,7 @@ const Footer = () => {
                       href="https://server210.web-hosting.com:2096/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider hover:bg-blue-600 hover:text-white transition-all duration-300"
+                      className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-indigo-950/40 border border-indigo-900/50 text-indigo-400 text-xs font-bold uppercase tracking-wider hover:bg-indigo-600 hover:text-white transition-all duration-300"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
@@ -120,8 +121,8 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-xs tracking-wide">
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-xs tracking-wide text-slate-500">
             © {new Date().getFullYear()} Fintrivora Technologies. Engineered for excellence.
           </p>
           <div className="flex space-x-6 text-xs font-medium">

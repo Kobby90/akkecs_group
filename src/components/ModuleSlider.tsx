@@ -70,7 +70,7 @@ const ModuleSlider = () => {
   const currentSlide = slides[currentIndex];
 
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-24 bg-transparent overflow-hidden border-t border-slate-200/60">
       <div className="max-w-screen-xl mx-auto px-6">
         <div className="relative">
           {/* Main Content Area */}
@@ -78,20 +78,20 @@ const ModuleSlider = () => {
 
             {/* Text Content (Left) */}
             <div className={`transition-all duration-700 transform ${isTransitioning ? 'opacity-0 -translate-x-8' : 'opacity-100 translate-x-0'}`}>
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-6">
-                <span className="text-xs font-bold tracking-wider text-blue-600 uppercase">Featured Module</span>
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 mb-6">
+                <span className="text-xs font-bold tracking-wider text-indigo-400 uppercase font-mono">Featured Module</span>
               </div>
-              <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl mb-6 leading-tight">
+              <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl mb-6 leading-tight font-display">
                 {currentSlide.title}
               </h2>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+              <p className="text-xl text-slate-650 mb-10 leading-relaxed max-w-xl">
                 {currentSlide.description}
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <Link
                   href={currentSlide.ctaLink}
-                  className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-blue-900 rounded-full hover:bg-blue-800 shadow-xl shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300"
+                  className="btn-premium-primary flex items-center justify-center font-bold"
                 >
                   {currentSlide.ctaText}
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,7 +102,7 @@ const ModuleSlider = () => {
             </div>
 
             {/* Image Content (Right) */}
-            <div className={`relative h-[500px] md:h-[650px] transition-all duration-700 transform ${isTransitioning ? 'opacity-0 translate-x-8 scale-95' : 'opacity-100 translate-x-0 scale-100'}`}>
+            <div className={`relative h-[500px] md:h-[650px] transition-all duration-700 transform ${isTransitioning ? 'opacity-0 translate-x-8 scale-95 animate-pulse' : 'opacity-100 translate-x-0 scale-100'}`}>
               <div className="relative w-full h-full">
                 <Image
                   src={currentSlide.image}
@@ -114,8 +114,8 @@ const ModuleSlider = () => {
               </div>
 
               {/* Subtle background decoration */}
-              <div className="absolute -z-10 -top-12 -right-12 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-              <div className="absolute -z-10 -bottom-8 -left-8 w-48 h-48 bg-indigo-50 rounded-full blur-2xl opacity-50"></div>
+              <div className="absolute -z-10 -top-12 -right-12 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl opacity-50"></div>
+              <div className="absolute -z-10 -bottom-8 -left-8 w-48 h-48 bg-cyan-500/5 rounded-full blur-2xl opacity-50"></div>
             </div>
           </div>
 
@@ -127,7 +127,7 @@ const ModuleSlider = () => {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`h-2.5 rounded-full transition-all duration-500 ${index === currentIndex ? 'bg-blue-900 w-10' : 'bg-slate-200 w-2.5 hover:bg-slate-300'
+                  className={`h-2.5 rounded-full transition-all duration-500 ${index === currentIndex ? 'bg-indigo-500 w-10 shadow-[0_0_8px_rgba(99,102,241,0.5)]' : 'bg-slate-300 w-2.5 hover:bg-slate-455'
                     }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -138,7 +138,7 @@ const ModuleSlider = () => {
             <div className="flex space-x-4">
               <button
                 onClick={prevSlide}
-                className="p-4 rounded-full border border-slate-200 text-slate-400 hover:text-blue-900 hover:border-blue-900 transition-all group"
+                className="p-4 rounded-full border border-slate-200 text-slate-500 hover:text-indigo-650 hover:border-indigo-500/50 hover:bg-indigo-50 transition-all group bg-white shadow-sm"
                 aria-label="Previous slide"
               >
                 <svg className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,7 +147,7 @@ const ModuleSlider = () => {
               </button>
               <button
                 onClick={nextSlide}
-                className="p-4 rounded-full border border-slate-200 text-slate-400 hover:text-blue-900 hover:border-blue-900 transition-all group"
+                className="p-4 rounded-full border border-slate-200 text-slate-500 hover:text-indigo-650 hover:border-indigo-500/50 hover:bg-indigo-50 transition-all group bg-white shadow-sm"
                 aria-label="Next slide"
               >
                 <svg className="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

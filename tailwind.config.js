@@ -23,7 +23,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter var', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        display: ['Outfit', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       spacing: {
         '128': '32rem',

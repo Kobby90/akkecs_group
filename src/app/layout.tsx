@@ -113,7 +113,7 @@ export default function RootLayout({
             <BreadcrumbSchema />
             <Navbar />
 
-            <main className="min-h-screen pt-16">
+            <main className="min-h-screen pt-28 bg-grid-pattern">
               {children}
             </main>
             <Footer />

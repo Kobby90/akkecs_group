@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
+  outputFileTracing: false,
   images: {
     // Optimization is enabled by default. Removing 'unoptimized: true' 
     // allows Next.js to use 'sharp' for compressing images.

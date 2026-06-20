@@ -8,25 +8,26 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="glass fixed w-full z-50 top-0 left-0 transition-all duration-300">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-4">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-screen-xl z-50 transition-all duration-300 rounded-2xl border border-slate-200/50 bg-white/80 backdrop-blur-xl shadow-lg shadow-slate-200/30">
+      <div className="flex flex-wrap items-center justify-between mx-auto px-6 py-3">
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="relative">
-            <div className="absolute -inset-1 bg-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-lg blur opacity-10 group-hover:opacity-20 transition duration-300"></div>
             <Image
               src="/logo.png"
               alt="Fintrivora Logo"
-              width={75}
-              height={50}
-              className="relative rounded-lg"
+              width={65}
+              height={43}
+              className="relative rounded-lg object-contain"
               quality={100}
               priority
             />
           </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
-              FINTRIVORA            </span>
-            <span className="text-sm font-black tracking-[0.2em] text-blue-600 uppercase">
+          <div className="flex flex-col leading-tight font-display">
+            <span className="text-2xl font-black tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors duration-300">
+              FINTRIVORA
+            </span>
+            <span className="text-[10px] font-black tracking-[0.25em] text-indigo-600 uppercase">
               Technologies
             </span>
           </div>
@@ -34,27 +35,27 @@ const Navbar = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden inline-flex items-center p-2 w-12 h-12 justify-center text-slate-500 rounded-xl hover:bg-slate-100/50 focus:outline-none transition-colors"
+          className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-slate-500 rounded-xl hover:bg-slate-100 hover:text-slate-900 focus:outline-none transition-colors border border-slate-200/50"
           aria-controls="navbar-menu"
           aria-expanded={isOpen}
         >
           <span className="sr-only">Open main menu</span>
-          <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
         </button>
 
         <div className={`${isOpen ? 'block animate-in slide-in-from-top-4 duration-300' : 'hidden'} w-full md:block md:w-auto mt-4 md:mt-0`} id="navbar-menu">
-          <ul className="flex flex-col p-4 md:p-0 font-medium md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent">
+          <ul className="flex flex-col p-4 md:p-0 font-medium md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent rounded-xl bg-white/95 border border-slate-200/50 md:border-none shadow-lg md:shadow-none">
             {['Home', 'About', 'Solutions', 'Contact'].map((item) => (
               <li key={item}>
                 <Link
                   href={item === 'Home' ? '/' : `/${item.toLowerCase()}/`}
-                  className="block py-2 px-4 text-slate-700 dark:text-slate-200 font-semibold hover:text-blue-600 md:p-0 transition-all duration-200 relative group"
+                  className="block py-2 px-4 text-slate-600 hover:text-slate-950 md:p-0 transition-all duration-200 relative group font-semibold"
                   onClick={() => setIsOpen(false)}
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full opacity-0 md:group-hover:opacity-100"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-400 transition-all duration-300 group-hover:w-full opacity-0 md:group-hover:opacity-100 shadow-[0_0_8px_rgba(99,102,241,0.5)]"></span>
                 </Link>
               </li>
             ))}
@@ -65,4 +66,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

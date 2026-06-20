@@ -9,44 +9,50 @@ const heroImages = [
   // Original Images
   {
     src: "/money-2696228.jpg",
-    alt: "Financial Management Dashboard"
+    alt: "Financial Management Dashboard",
+    position: "right"
   },
   {
     src: "/money-2696229.jpg",
-    alt: "Investment Analytics"
+    alt: "Investment Analytics",
+    position: "right"
   },
   {
     src: "/mockup.jpg",
-    alt: "Systems"
+    alt: "Systems",
+    position: "right"
   },
   {
     src: "/money.jpg",
-    alt: "pension"
+    alt: "pension",
+    position: "right"
   },
   {
     src: "/analytics.jpg",
-    alt: "analytics"
+    alt: "analytics",
+    position: "right"
   },
   {
     src: "/analytics1.jpg",
-    alt: "analytics1"
+    alt: "analytics1",
+    position: "right"
   },
 
   // Added Banner Images
   {
     src: "/banner1.png",
     alt: "Strategic Investment Management",
-    position: "top"
+    position: "right top"
   },
   {
     src: "/banner3.png",
     alt: "Corporate Financial Solutions",
-    position: "top"
+    position: "right top"
   },
   {
     src: "/banner4.png",
     alt: "Enterprise Asset Administration",
-    position: "top"
+    position: "right top"
   }
 ];
 
@@ -54,30 +60,30 @@ export default function HomeContent() {
   const { openDemoModal } = useDemoModal();
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <ImageSlider images={heroImages} />
-          {/* Gradient Overlays */}
-          <div className="absolute inset-0 bg-slate-950/30 backdrop-blur-[1px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/45 to-transparent"></div>
+          {/* Gradient Overlays for Hybrid Dark/Light Mode */}
+          <div className="absolute inset-0 bg-slate-950/15"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(250,250,253,1)_0%,rgba(15,23,42,0.15)_30%,transparent_60%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.92)_0%,rgba(15,23,42,0.85)_35%,rgba(15,23,42,0.4)_65%,transparent_90%)]"></div>
         </div>
 
         <div className="relative z-10 w-full">
           <div className="max-w-screen-xl mx-auto px-6 py-12 lg:py-24">
             <div className="max-w-3xl animate-in fade-in slide-in-from-left-8 duration-700">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6 backdrop-blur-md">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-6 backdrop-blur-md">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                 </span>
-                <span className="text-xs font-bold tracking-wider text-blue-400 uppercase">Trusted by Global Institutions</span>
+                <span className="text-xs font-bold tracking-wider text-indigo-400 uppercase font-mono">Trusted by Global Institutions</span>
               </div>
 
-              <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-[1.1] md:text-6xl xl:text-7xl text-white">
+              <h1 className="mb-6 text-5xl font-extrabold tracking-tight leading-[1.1] md:text-6xl xl:text-7xl text-white font-display">
                 Next-Gen <span className="line-break text-gradient font-black">Asset Management</span> Software & Pension Systems
               </h1>
-
 
               <p className="mb-10 text-lg text-slate-300 md:text-xl max-w-2xl leading-relaxed">
                 Empowering modern financial institutions with streamlined operations, real-time analytics, and uncompromising security.
@@ -86,14 +92,14 @@ export default function HomeContent() {
               <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                 <button
                   onClick={openDemoModal}
-                  className="btn-premium bg-blue-600 text-white hover:bg-blue-500 flex items-center justify-center">
+                  className="btn-premium bg-white text-slate-900 hover:bg-slate-50 border-none flex items-center justify-center font-bold">
                   Book a demo Session
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </button>
                 <Link href="/solutions"
-                  className="btn-premium glass text-white hover:bg-white/10 flex items-center justify-center">
+                  className="btn-premium border border-white/20 text-white hover:bg-white/10 flex items-center justify-center font-bold">
                   Explore Solutions
                 </Link>
               </div>
@@ -110,9 +116,9 @@ export default function HomeContent() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section className="py-24 bg-[#FAFAFD] relative overflow-hidden">
         {/* Background Portrait Fade */}
-        <div className="absolute inset-y-0 left-0 w-1/2 z-0 opacity-[0.04] pointer-events-none hidden lg:block">
+        <div className="absolute inset-y-0 left-0 w-1/2 z-0 opacity-[0.03] pointer-events-none hidden lg:block">
           <Image
             src="/portraite.png"
             alt="Background feature"
@@ -121,68 +127,79 @@ export default function HomeContent() {
             sizes="(max-width: 1024px) 1px, 50vw"
             quality={60}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50/50 to-slate-50"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-transparent to-slate-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FAFAFD]/50 to-[#FAFAFD]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFD] via-transparent to-[#FAFAFD]"></div>
         </div>
-
 
         <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="mb-4 text-4xl font-bold text-slate-900 md:text-5xl tracking-tight">
+            <h2 className="mb-4 text-4xl font-bold text-slate-900 md:text-5xl tracking-tight font-display">
               Built for the Future of Finance
             </h2>
-            <div className="h-1.5 w-20 bg-blue-600 mx-auto rounded-full mb-6"></div>
+            <div className="h-1.5 w-20 bg-indigo-500 mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-slate-600 leading-relaxed">
               Our engineering-first approach delivers the reliability and performance required by global asset managers and pension funds.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Security Feature */}
-            <div className="group relative p-8 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="group glowing-card p-8 rounded-3xl relative">
+              <div className="glowing-card-glow"></div>
               <div className="relative z-10">
-                <div className="mb-6 inline-flex p-4 rounded-2xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                <div className="mb-6 inline-flex p-4 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Enterprise Security</h3>
+                <h3 className="mb-3 text-2xl font-bold font-display text-slate-900 group-hover:text-indigo-600 transition-colors">Enterprise Security</h3>
                 <p className="text-slate-600 leading-relaxed">
                   Military-grade encryption with multi-factor authentication and comprehensive audit trails for absolute data integrity.
                 </p>
+                <div className="mt-6 flex items-center space-x-2 text-xs font-mono text-indigo-600">
+                  <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                  <span>AES-256 Active Protection</span>
+                </div>
               </div>
             </div>
 
             {/* Scalability Feature */}
-            <div className="group relative p-8 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="group glowing-card p-8 rounded-3xl relative">
+              <div className="glowing-card-glow"></div>
               <div className="relative z-10">
-                <div className="mb-6 inline-flex p-4 rounded-2xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                <div className="mb-6 inline-flex p-4 rounded-2xl bg-cyan-50 text-cyan-600 border border-cyan-100 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-300">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Infinite Scalability</h3>
+                <h3 className="mb-3 text-2xl font-bold font-display text-slate-900 group-hover:text-cyan-600 transition-colors">Infinite Scalability</h3>
                 <p className="text-slate-600 leading-relaxed">
                   Cloud-native architecture designed to process millions of transactions with sub-millisecond latency as your AUM grows.
                 </p>
+                <div className="mt-6 flex items-center space-x-2 text-xs font-mono text-cyan-600">
+                  <span className="h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                  <span>Latency: &lt; 1.2ms</span>
+                </div>
               </div>
             </div>
 
             {/* Compliance Feature */}
-            <div className="group relative p-8 bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div className="group glowing-card p-8 rounded-3xl relative">
+              <div className="glowing-card-glow"></div>
               <div className="relative z-10">
-                <div className="mb-6 inline-flex p-4 rounded-2xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+                <div className="mb-6 inline-flex p-4 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="mb-3 text-2xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Auto-Compliance</h3>
+                <h3 className="mb-3 text-2xl font-bold font-display text-slate-900 group-hover:text-indigo-600 transition-colors">Auto-Compliance</h3>
                 <p className="text-slate-600 leading-relaxed">
                   Real-time regulatory reporting and automated risk monitoring built into the core logic of every transaction.
                 </p>
+                <div className="mt-6 flex items-center space-x-2 text-xs font-mono text-indigo-600">
+                  <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                  <span>Compliance Rating: 99.9%</span>
+                </div>
               </div>
             </div>
           </div>
@@ -200,25 +217,26 @@ export default function HomeContent() {
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-blue-900/80 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-900/60 to-slate-950/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-900/60 to-slate-950/95"></div>
         </div>
 
         <div className="max-w-screen-xl mx-auto px-6 text-center relative z-10">
-          <div className="max-w-3xl mx-auto rounded-[3rem] p-12 lg:p-16 border border-white/10 bg-slate-900/40 backdrop-blur-md shadow-2xl">
-            <h2 className="mb-6 text-4xl font-extrabold text-white md:text-5xl tracking-tight">
+          <div className="max-w-3xl mx-auto rounded-[3rem] p-12 lg:p-16 border border-white/10 bg-slate-900/40 backdrop-blur-md shadow-2xl relative">
+            <div className="absolute -inset-px bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 rounded-[3rem] opacity-0 group-hover:opacity-100 transition duration-500 blur pointer-events-none"></div>
+            <h2 className="mb-6 text-4xl font-extrabold text-white md:text-5xl tracking-tight font-display relative z-10">
               Ready to evolve your operations?
             </h2>
-            <p className="mb-10 text-xl text-blue-100 font-light max-w-2xl mx-auto">
+            <p className="mb-10 text-xl text-blue-100 font-light max-w-2xl mx-auto relative z-10">
               Join leading firms who have optimized their infrastructure with FINTRIVORA.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 relative z-10">
               <button
                 onClick={openDemoModal}
-                className="btn-premium bg-white text-blue-900 hover:bg-blue-50 w-full sm:w-auto">
+                className="btn-premium bg-white text-blue-950 hover:bg-blue-50 w-full sm:w-auto font-bold">
                 Schedule Demo
               </button>
               <Link href="/contact"
-                className="btn-premium border-2 border-white/20 text-white hover:bg-white/10 w-full sm:w-auto">
+                className="btn-premium border border-white/20 text-white hover:bg-white/10 w-full sm:w-auto font-bold">
                 Contact Sales
               </Link>
             </div>
