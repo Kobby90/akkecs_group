@@ -12,7 +12,6 @@ try {
 
 const nextConfig = {
   trailingSlash: true,
-  output: 'standalone',
   images: {
     minimumCacheTTL: 60,
   },
