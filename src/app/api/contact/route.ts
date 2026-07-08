@@ -1,41 +1,17 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { transporter } from '@/utils/nodemailer';
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
         const { name, email, company, phone, message } = body;
 
-        // Verify SMTP configuration
-        const host = process.env.SMTP_HOST;
-        const port = Number(process.env.SMTP_PORT);
-        const user = process.env.SMTP_USER;
-        const pass = process.env.SMTP_PASS;
         const adminEmail = process.env.NOTIFICATION_EMAIL || 'info@fintrivoratech.com';
 
-        if (!host || !port || !user || !pass) {
-            console.error('SMTP configuration missing:', { host: !!host, port: !!port, user: !!user, pass: !!pass });
+        if (!transporter) {
+            console.error('SMTP transporter not initialized. Check your environment variables.');
             return NextResponse.json({ error: 'Mail server not configured correctly' }, { status: 500 });
         }
-
-        // Create nodemailer transporter
-        const transporter = nodemailer.createTransport({
-            host: host,
-            port: port,
-            secure: port === 465, // true for 465, false for other ports
-            auth: {
-                user: user,
-                pass: pass,
-            },
-            connectionTimeout: 10000,
-            greetingTimeout: 10000,
-            socketTimeout: 10000,
-            logger: true,
-            debug: true,
-            tls: {
-                rejectUnauthorized: false,
-            },
-        });
 
         const mailOptions = {
             from: '"Fintrivora Contact Form" <noreply@fintrivoratech.com>',
