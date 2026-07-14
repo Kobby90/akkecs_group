@@ -32,6 +32,5 @@ export const transporter =
       })
     : null);
 
-if (process.env.NODE_ENV !== 'production') {
-  globalForNodemailer.transporter = transporter || undefined;
-}
+// Maintain singleton in all environments to prevent connection leaks
+globalForNodemailer.transporter = transporter || undefined;

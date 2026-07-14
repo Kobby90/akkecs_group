@@ -12,6 +12,8 @@ try {
 
 const nextConfig = {
   trailingSlash: true,
+  output: 'standalone',
+  cacheMaxMemorySize: 0, // Disable default in-memory caching to prevent memory leaks
   images: {
     minimumCacheTTL: 60,
   },
