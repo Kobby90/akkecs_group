@@ -1,3 +1,14 @@
+// Configure sharp to prevent memory leaks/spikes in production/containers
+try {
+  const sharp = require('sharp');
+  sharp.cache(false);
+  sharp.simd(false);
+  sharp.concurrency(1);
+  console.log('Sharp cache, SIMD, and thread concurrency configured in server.js.');
+} catch (e) {
+  // Ignore if sharp is not installed
+}
+
 const { createServer } = require('http');
 const next = require('next');
 const { parse } = require('url');

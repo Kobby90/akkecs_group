@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-// Disable sharp memory cache to prevent memory leaks on Railway
+// Disable sharp memory cache and set concurrency to 1 to prevent memory spikes on Railway
 try {
   const sharp = require('sharp');
   sharp.cache(false);
   sharp.simd(false);
-  console.log('Sharp cache and SIMD disabled to prevent memory leaks.');
+  sharp.concurrency(1);
+  console.log('Sharp cache, SIMD, and thread concurrency configured to prevent memory leaks.');
 } catch (e) {
   // Gracefully ignore if sharp is not loaded or during initial config load
 }
